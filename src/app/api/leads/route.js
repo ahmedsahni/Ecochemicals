@@ -117,14 +117,24 @@ export async function POST(request) {
 
     return NextResponse.json({ success: true, message: 'Lead saved successfully', data: newLead, emailSent, emailError }, { status: 201 });
   } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json({
-        success: false,
-        errors: error.errors.map(e => ({ field: e.path.join('.'), message: e.message }))
-      }, { status: 400 });
+    console.error('API POST Error Detailed:', error);
+    if (error && error.name === 'ZodError') {
+      const errorsList = Array.isArray(error.errors) 
+        ? error.errors.map(e => ({ field: e.path ? e.path.join('.') : 'unknown', message: e.message }))
+        : [];
+      return NextResponse.json({ success: false, errors: errorsList }, { status: 400 });
     }
-    console.error('API Error:', error);
-    return NextResponse.json({ success: false, message: 'Server error. Please try again.' }, { status: 500 });
+    
+    // Check if it's a Mongoose error
+    if (error && error.name === 'ValidationError') {
+      return NextResponse.json({ success: false, message: 'Database validation failed', details: error.message }, { status: 400 });
+    }
+
+    return NextResponse.json({ 
+      success: false, 
+      message: 'Server error. Please try again.',
+      errorDetails: error ? error.message : 'Unknown error'
+    }, { status: 500 });
   }
 }
 
