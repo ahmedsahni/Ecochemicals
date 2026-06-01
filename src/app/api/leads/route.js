@@ -12,9 +12,7 @@ const LeadSchema = z.object({
     message: 'Invalid Pakistani phone number format. Must be like +923XXXXXXXXX or 03XXXXXXXXX',
   }),
   city: z.string().min(2, { message: 'City/District must be at least 2 characters long' }).trim(),
-  farmSize: z.enum(['Small', 'Medium', 'Large'], {
-    errorMap: () => ({ message: 'Please select a valid farm size' }),
-  }),
+  company: z.string().min(2, { message: 'Company must be at least 2 characters long' }).trim(),
   padCount: z.preprocess((val) => {
     if (val === '' || val === undefined || val === null) return undefined;
     const num = Number(val);
@@ -81,8 +79,8 @@ export async function POST(request) {
                   <td style="padding: 10px; border-bottom: 1px solid #eef2f5; color: #111;">${validatedData.city}</td>
                 </tr>
                 <tr>
-                  <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #eef2f5;">Farm Size:</td>
-                  <td style="padding: 10px; border-bottom: 1px solid #eef2f5; color: #111;">${validatedData.farmSize}</td>
+                  <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #eef2f5;">Company/Farm:</td>
+                  <td style="padding: 10px; border-bottom: 1px solid #eef2f5; color: #111;">${validatedData.company}</td>
                 </tr>
                 <tr style="background-color: #f7f9fc;">
                   <td style="padding: 10px; font-weight: bold; border-bottom: 1px solid #eef2f5;">No. of Pads:</td>

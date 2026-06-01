@@ -118,9 +118,10 @@ const Dashboard = ({ onClose }) => {
     const matchesSearch = 
       lead.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       lead.phone.includes(searchTerm) ||
-      lead.city.toLowerCase().includes(searchTerm.toLowerCase());
+      lead.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (lead.company && lead.company.toLowerCase().includes(searchTerm.toLowerCase()));
     
-    const matchesSize = sizeFilter === 'All' || lead.farmSize === sizeFilter;
+    const matchesSize = sizeFilter === 'All' || lead.company === sizeFilter;
     const matchesStatus = statusFilter === 'All' || lead.status === statusFilter;
 
     return matchesSearch && matchesSize && matchesStatus;
@@ -304,10 +305,7 @@ const Dashboard = ({ onClose }) => {
               onChange={(e) => setSizeFilter(e.target.value)}
               className="w-full md:w-40 px-3 py-2.5 bg-slate-950 border border-slate-800 rounded-xl text-xs font-bold focus:outline-none focus:ring-1 focus:ring-primary"
             >
-              <option value="All">All Farm Sizes</option>
-              <option value="Small">Small (under 10k birds)</option>
-              <option value="Medium">Medium (10k-50k birds)</option>
-              <option value="Large">Large (50k+ birds)</option>
+              <option value="All">All Companies</option>
             </select>
           </div>
 
@@ -369,7 +367,7 @@ const Dashboard = ({ onClose }) => {
                         {/* Farm details */}
                         <td className="py-4 px-6">
                           <div className="flex flex-col gap-0.5 font-semibold">
-                            <span className="text-slate-300">Size: <strong className="text-primary">{lead.farmSize}</strong></span>
+                            <span className="text-slate-300">Farm: <strong className="text-primary">{lead.company}</strong></span>
                             <span className="text-slate-400 text-xs">Pads: <strong>{lead.padCount || 'N/A'}</strong></span>
                           </div>
                         </td>

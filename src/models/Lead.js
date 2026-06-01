@@ -16,10 +16,10 @@ const LeadSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  farmSize: {
+  company: {
     type: String,
-    enum: ['Small', 'Medium', 'Large'],
     required: true,
+    trim: true,
   },
   padCount: {
     type: Number,
