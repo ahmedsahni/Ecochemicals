@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import Partners from '@/components/Partners';
 import Stats from '@/components/Stats';
 import ProblemSolution from '@/components/ProblemSolution';
+import WinterAdvisory from '@/components/WinterAdvisory';
 import Product from '@/components/Product';
 import HowItWorks from '@/components/HowItWorks';
 import WhyChooseUs from '@/components/WhyChooseUs';
@@ -45,6 +46,7 @@ export default function Home() {
         <Partners />
         <Stats />
         <ProblemSolution />
+        <WinterAdvisory />
         <Product onCalculatorSubmit={setPrefilledMsg} />
         <HowItWorks />
         <WhyChooseUs />
