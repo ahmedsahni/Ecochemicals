@@ -28,11 +28,17 @@ export default function Hero() {
 
       {/* High-Tech Background */}
       <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0 bg-[#0B0F19]">
-        {/* Subtle grid pattern */}
+        {/* Farm Background Image */}
+        <div 
+          className="absolute inset-0 bg-[url('/images/farm_bg.png')] bg-cover bg-center opacity-[0.25] mix-blend-luminosity pointer-events-none" 
+        />
+        {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDQwIDAgNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48cG9seWdvbiBwb2ludHM9IjAgMCA0MCAwIDQwIDEgMCAxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9zdmc+')] opacity-50" />
         {/* Deep blue radial glow */}
-        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-blue-900/30 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-900/20 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-blue-900/40 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-900/30 rounded-full blur-[120px]" />
+        {/* Overlay gradient to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B0F19] via-[#0B0F19]/80 to-[#0B0F19]/30" />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid lg:grid-cols-2 gap-16 items-center w-full">

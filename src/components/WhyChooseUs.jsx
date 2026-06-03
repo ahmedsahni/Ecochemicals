@@ -12,7 +12,7 @@ const features = [
     desc: 'Rapidly penetrates and cuts through thick calcium scale and organic biofilm in hours.',
     color: 'text-cyan-400',
     glow: 'from-cyan-500/20',
-    span: 'lg:col-span-2',
+    span: '',
   },
   {
     icon: ShieldCheck,
@@ -72,6 +72,24 @@ export default function WhyChooseUs() {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            className="group relative rounded-3xl overflow-hidden glass-panel border border-slate-700/50 md:col-span-2 lg:col-span-2 h-[350px]"
+          >
+            <img 
+              src="/images/healthy_flock.png" 
+              alt="Healthy pristine poultry flock" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/20 to-transparent opacity-90" />
+            <div className="absolute bottom-8 left-8 right-8">
+              <h3 className="text-2xl font-black text-white mb-2">Ensuring Ultimate Flock Health</h3>
+              <p className="text-slate-300 font-medium text-sm max-w-md">Our chemical engineering guarantees a hygienic, pathogen-free environment, directly maximizing bird health and farm yield.</p>
+            </div>
+          </motion.div>
           {features.map((feat, i) => {
             const Icon = feat.icon;
             return (
