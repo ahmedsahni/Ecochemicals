@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const partners = [
-  "K&N's Foods", "Sabroso", "Jadeed Farms", "Big Bird", "SB Poultry", "Al-Rehman Farms", "Punjab Broilers",
+  "K&N's Foods", "Sabroso", "Big Bird", "SB Poultry", "Al-Rehman Farms", "Punjab Broilers",
 ];
 
 export default function Partners() {
