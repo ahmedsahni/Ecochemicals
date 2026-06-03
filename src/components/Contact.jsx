@@ -102,10 +102,10 @@ export default function Contact() {
                 <p className="text-xs text-slate-400 mt-1">Direct channel for logistics & payload queries.</p>
               </div>
               <a
-                href="tel:+923214858418"
+                href="tel:+923226057885"
                 className="relative z-10 mt-6 block w-full py-3 text-center rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]"
               >
-                +92 321 4858418
+                +92 322 6057885
               </a>
             </div>
 

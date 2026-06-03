@@ -92,7 +92,7 @@ export default function LeadForm({ prefilledMessage }) {
               </div>
               <div>
                 <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">Corporate HQ (Sargodha)</p>
-                <p className="text-xl font-bold text-white">0321 4858418</p>
+                <p className="text-xl font-bold text-white">0322 6057885</p>
               </div>
             </div>
           </div>
