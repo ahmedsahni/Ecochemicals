@@ -80,8 +80,8 @@ export default function LeadForm({ prefilledMessage }) {
               </div>
               <div>
                 <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">WhatsApp Priority Channel</p>
-                <a href="https://wa.me/923226057885" target="_blank" rel="noreferrer" className="text-xl font-bold text-white hover:text-emerald-300 transition-colors">
-                  +92 322 6057885
+                <a href="https://wa.me/923214858418" target="_blank" rel="noreferrer" className="text-xl font-bold text-white hover:text-emerald-300 transition-colors">
+                  +92 321 4858418
                 </a>
               </div>
             </div>
@@ -91,8 +91,8 @@ export default function LeadForm({ prefilledMessage }) {
                 <PhoneCall className="w-6 h-6 text-blue-400" />
               </div>
               <div>
-                <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">Corporate HQ (Faisalabad)</p>
-                <p className="text-xl font-bold text-white">0322 6057885</p>
+                <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">Corporate HQ (Sargodha)</p>
+                <p className="text-xl font-bold text-white">0321 4858418</p>
               </div>
             </div>
           </div>

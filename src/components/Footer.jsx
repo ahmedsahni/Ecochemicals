@@ -39,7 +39,7 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6 text-sm uppercase tracking-widest">Contact HQ</h4>
             <ul className="space-y-4 text-sm font-medium text-slate-400">
               <li>Sargodha, Pakistan</li>
-              <li>+92 322 6057885</li>
+              <li>+92 321 4858418</li>
             </ul>
           </div>
         </div>

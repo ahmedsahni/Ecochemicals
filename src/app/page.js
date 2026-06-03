@@ -63,7 +63,7 @@ export default function Home() {
           Chat on WhatsApp
         </div>
         <a
-          href="https://wa.me/923226057885?text=Hi%20ECO%20Chemicals,%20I%20have%20an%20inquiry%20regarding%20Cleanex%20Pad%20Cleaner."
+          href="https://wa.me/923214858418?text=Hi%20ECO%20Chemicals,%20I%20have%20an%20inquiry%20regarding%20Cleanex%20Pad%20Cleaner."
           target="_blank"
           rel="noreferrer"
           aria-label="Chat on WhatsApp"
