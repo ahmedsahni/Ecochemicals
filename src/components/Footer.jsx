@@ -12,7 +12,7 @@ export default function Footer() {
                 <Droplet className="w-5 h-5 fill-current" />
               </div>
               <div>
-                <span className="block text-xl font-black text-white tracking-tight glow-text">ECO <span className="text-blue-400">Chemicals</span></span>
+                <span className="block text-xl font-black text-white tracking-tight">ECO <span className="text-blue-400">Chemicals</span></span>
                 <span className="block text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">Poultry Solutions</span>
               </div>
             </a>

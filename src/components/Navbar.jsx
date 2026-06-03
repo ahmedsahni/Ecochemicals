@@ -34,13 +34,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group relative">
-            <div className="absolute inset-0 bg-blue-600 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+          <a href="#home" className="flex items-center gap-3 group">
             <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white border border-blue-400/30">
               <Droplet className="w-6 h-6 fill-current drop-shadow-md" />
             </div>
             <div className="relative">
-              <span className="block text-xl font-black text-white tracking-tight glow-text">ECO <span className="text-blue-400">Chemicals</span></span>
+              <span className="block text-xl font-black text-white tracking-tight">ECO <span className="text-blue-400">Chemicals</span></span>
               <span className="block text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">Poultry Solutions</span>
             </div>
           </a>
