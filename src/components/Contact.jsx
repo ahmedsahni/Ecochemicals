@@ -145,7 +145,7 @@ export default function Contact() {
                 rel="noreferrer"
                 className="relative z-10 flex-shrink-0 px-7 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center"
               >
-                💬 Open WhatsApp
+                Open WhatsApp
               </a>
             </div>
           </motion.div>
