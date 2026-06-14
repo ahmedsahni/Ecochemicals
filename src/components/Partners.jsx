@@ -1,13 +1,14 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 const partners = [
   "K&N's Foods", "Sabroso", "Big Bird", "SB Poultry", "Al-Rehman Farms", "Punjab Broilers",
 ];
 
 export default function Partners() {
+  const { t } = useLanguage();
   // Duplicate for seamless loop
   const items = [...partners, ...partners];
 
@@ -15,7 +16,7 @@ export default function Partners() {
     <section className="bg-slate-900 py-14 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <p className="text-center text-xs font-bold text-slate-500 uppercase tracking-[0.25em]">
-          Trusted by Pakistan's Leading Poultry Integrations
+          {t('partners.title')}
         </p>
       </div>
 

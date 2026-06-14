@@ -3,10 +3,12 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { AlertTriangle, ShieldCheck, Activity, Flame, Wind } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function ProblemSolution() {
   const [sliderPos, setSliderPos] = useState(50);
   const containerRef = useRef(null);
+  const { t, language } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
@@ -29,7 +31,7 @@ export default function ProblemSolution() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 mb-4"
           >
             <Activity className="w-4 h-4 text-orange-400" />
-            <span className="text-xs font-bold text-orange-300 tracking-widest uppercase">System Vulnerability</span>
+            <span className="text-xs font-bold text-orange-300 tracking-widest uppercase">{t('problemSolution.tag')}</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -38,7 +40,10 @@ export default function ProblemSolution() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl font-black text-white leading-tight"
           >
-            Why Clean Pads Mean Farm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Profitability</span>
+            {t('problemSolution.title')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              {t('problemSolution.titleGlow')}
+            </span>
           </motion.h2>
         </div>
 
@@ -54,13 +59,13 @@ export default function ProblemSolution() {
             className="lg:col-span-4 space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 border-l-2 border-orange-500 text-orange-400 text-xs font-black uppercase tracking-widest">
-              <AlertTriangle className="w-4 h-4" /> The Threat
+              <AlertTriangle className="w-4 h-4" /> {t('problemSolution.threatTag')}
             </div>
 
             <div>
-              <h3 className="text-2xl font-extrabold text-white mb-4">Calcium Scale & Fungi</h3>
+              <h3 className="text-2xl font-extrabold text-white mb-4">{t('problemSolution.threatTitle')}</h3>
               <p className="text-slate-400 leading-relaxed font-medium">
-                Pads accumulate hard calcium scale, algae, and salt crusts. This chokes ventilation, forcing exhaust fans to work overtime while airflow plummets.
+                {t('problemSolution.threatDesc')}
               </p>
             </div>
 
@@ -68,15 +73,15 @@ export default function ProblemSolution() {
               <li className="flex items-start gap-4 p-4 rounded-2xl bg-orange-500/5 border border-orange-500/10">
                 <Flame className="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-slate-200 mb-1">Aspergillus Fungi Spores</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Moist, dirty pads breed fatal fungi, causing respiratory distress and catastrophic chick mortality.</p>
+                  <h4 className="font-bold text-slate-200 mb-1">{t('problemSolution.sporesTitle')}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{t('problemSolution.sporesDesc')}</p>
                 </div>
               </li>
               <li className="flex items-start gap-4 p-4 rounded-2xl bg-slate-800/50 border border-slate-700/50">
                 <Wind className="w-6 h-6 text-slate-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-slate-200 mb-1">Airflow Suffocation</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Salt seals reduce cooling capacity by up to 60%, raising temperatures to dangerous levels.</p>
+                  <h4 className="font-bold text-slate-200 mb-1">{t('problemSolution.suffocationTitle')}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{t('problemSolution.suffocationDesc')}</p>
                 </div>
               </li>
             </ul>
@@ -98,24 +103,24 @@ export default function ProblemSolution() {
               <div className="absolute inset-0">
                 <img src="/images/pads.png" alt="Clean cooling pads" className="w-full h-full object-cover opacity-80" />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent mix-blend-overlay" />
-                <div className="absolute bottom-4 right-4 text-right">
-                  <span className="inline-block px-3 py-1 bg-blue-600/20 border border-blue-500/50 text-blue-300 text-[10px] font-black tracking-widest rounded-lg backdrop-blur-md">CLEAN</span>
-                  <p className="text-xs font-black text-white mt-1 uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Max Airflow</p>
+                <div className={`absolute bottom-4 ${language === 'ur' ? 'left-4 text-left' : 'right-4 text-right'}`}>
+                  <span className="inline-block px-3 py-1 bg-blue-600/20 border border-blue-500/50 text-blue-300 text-[10px] font-black tracking-widest rounded-lg backdrop-blur-md">{t('problemSolution.cleanTag')}</span>
+                  <p className="text-xs font-black text-white mt-1 uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{t('problemSolution.maxAirflow')}</p>
                 </div>
               </div>
 
               {/* Clogged side (left, width = sliderPos) */}
               <div
-                className="absolute inset-y-0 left-0 overflow-hidden border-r-2 border-cyan-400 shadow-[2px_0_15px_rgba(34,211,238,0.5)]"
+                className={`absolute inset-y-0 left-0 overflow-hidden ${language === 'ur' ? 'border-l-2' : 'border-r-2'} border-cyan-400 shadow-[2px_0_15px_rgba(34,211,238,0.5)]`}
                 style={{ width: `${sliderPos}%` }}
               >
                 {/* Clogged — same pads photo but with heavy amber/red colour grading overlay */}
                 <img src="/images/pads.png" alt="Clogged cooling pads" className="absolute inset-0 w-full h-full object-cover" style={{ width: '320px', maxWidth: 'none' }} />
                 <div className="absolute inset-0 bg-orange-900/80 mix-blend-multiply" style={{ width: '320px' }} />
                 <div className="absolute inset-0 bg-gradient-to-b from-orange-900/50 to-orange-600/30" style={{ width: '320px' }} />
-                <div className="absolute bottom-4 left-4" style={{ width: '100px' }}>
-                  <span className="inline-block px-3 py-1 bg-orange-500/20 border border-orange-500/50 text-orange-300 text-[10px] font-black tracking-widest rounded-lg backdrop-blur-md">CLOGGED</span>
-                  <p className="text-xs font-black text-white mt-1 uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">Blocked Air</p>
+                <div className={`absolute bottom-4 ${language === 'ur' ? 'right-4 text-right' : 'left-4'}`} style={{ width: '100px' }}>
+                  <span className="inline-block px-3 py-1 bg-orange-500/20 border border-orange-500/50 text-orange-300 text-[10px] font-black tracking-widest rounded-lg backdrop-blur-md">{t('problemSolution.cloggedTag')}</span>
+                  <p className="text-xs font-black text-white mt-1 uppercase tracking-widest drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{t('problemSolution.blockedAir')}</p>
                 </div>
               </div>
 
@@ -141,7 +146,7 @@ export default function ProblemSolution() {
                 className="w-full accent-cyan-400 h-1 bg-slate-800 rounded-full cursor-pointer"
               />
               <p className="text-center text-[10px] text-slate-500 font-bold mt-3 uppercase tracking-[0.2em]">
-                Drag to analyze
+                {t('problemSolution.dragAnalyze')}
               </p>
             </div>
           </motion.div>
@@ -155,13 +160,13 @@ export default function ProblemSolution() {
             className="lg:col-span-4 space-y-8"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 border-l-2 border-blue-500 text-blue-400 text-xs font-black uppercase tracking-widest">
-              <ShieldCheck className="w-4 h-4" /> The Solution
+              <ShieldCheck className="w-4 h-4" /> {t('problemSolution.solutionTag')}
             </div>
 
             <div>
-              <h3 className="text-2xl font-extrabold text-white mb-4">Cleanex Pad Cleaner</h3>
+              <h3 className="text-2xl font-extrabold text-white mb-4">{t('problemSolution.solutionTitle')}</h3>
               <p className="text-slate-400 leading-relaxed font-medium">
-                A premium, fast-acting descaler and sanitizer. Cleanex rapidly dissolves heavy calcium scale and algae, restoring full airflow and completely neutralizing all pathogens.
+                {t('problemSolution.solutionDesc')}
               </p>
             </div>
 
@@ -169,15 +174,15 @@ export default function ProblemSolution() {
               <li className="flex items-start gap-4 p-4 rounded-2xl glass-panel">
                 <ShieldCheck className="w-6 h-6 text-blue-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-slate-200 mb-1">Scale Dissolution</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Melts hard calcium build-up and salt rings without causing structural damage to the cellulose.</p>
+                  <h4 className="font-bold text-slate-200 mb-1">{t('problemSolution.scaleTitle')}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{t('problemSolution.scaleDesc')}</p>
                 </div>
               </li>
               <li className="flex items-start gap-4 p-4 rounded-2xl glass-panel">
                 <ShieldCheck className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-bold text-slate-200 mb-1">Pathogen Eradication</h4>
-                  <p className="text-sm text-slate-400 leading-relaxed">Guaranteed kill rate against Aspergillus fumigatus spores, algae layers, and foul-odor bacteria.</p>
+                  <h4 className="font-bold text-slate-200 mb-1">{t('problemSolution.pathogenTitle')}</h4>
+                  <p className="text-sm text-slate-400 leading-relaxed">{t('problemSolution.pathogenDesc')}</p>
                 </div>
               </li>
             </ul>

@@ -4,39 +4,42 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Settings, Droplets, ThermometerSun, ShieldCheck } from 'lucide-react';
 import TextReveal from './TextReveal';
-
-const steps = [
-  {
-    number: "01",
-    icon: Droplets,
-    title: 'Chemical Injection',
-    desc: 'Inject Cleanex directly into the main water tank using the recommended dosing ratio based on matrix scaling severity.',
-    color: 'text-blue-400',
-  },
-  {
-    number: "02",
-    icon: Settings,
-    title: 'System Circulation',
-    desc: 'Run the water circulation pumps without exhaust fans for 2-3 hours. This allows the bio-surfactants to penetrate deep into the cellulose matrix.',
-    color: 'text-cyan-400',
-  },
-  {
-    number: "03",
-    icon: ShieldCheck,
-    title: 'Scale Dissolution',
-    desc: 'The formula chemically breaks down hard calcium bonds and eradicates fungal spores. Flush the system with clean water to remove debris.',
-    color: 'text-emerald-400',
-  },
-  {
-    number: "04",
-    icon: ThermometerSun,
-    title: 'Thermal Drop',
-    desc: 'Re-engage exhaust fans. The newly restored airflow capacity immediately drops internal shed temperatures by up to 4°C.',
-    color: 'text-orange-400',
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function HowItWorks() {
+  const { t, language } = useLanguage();
+
+  const steps = [
+    {
+      number: language === 'ur' ? "۰۱" : "01",
+      icon: Droplets,
+      title: t('howItWorks.step1Title'),
+      desc: t('howItWorks.step1Desc'),
+      color: 'text-blue-400',
+    },
+    {
+      number: language === 'ur' ? "۰۲" : "02",
+      icon: Settings,
+      title: t('howItWorks.step2Title'),
+      desc: t('howItWorks.step2Desc'),
+      color: 'text-cyan-400',
+    },
+    {
+      number: language === 'ur' ? "۰۳" : "03",
+      icon: ShieldCheck,
+      title: t('howItWorks.step3Title'),
+      desc: t('howItWorks.step3Desc'),
+      color: 'text-emerald-400',
+    },
+    {
+      number: language === 'ur' ? "۰۴" : "04",
+      icon: ThermometerSun,
+      title: t('howItWorks.step4Title'),
+      desc: t('howItWorks.step4Desc'),
+      color: 'text-orange-400',
+    },
+  ];
+
   return (
     <section id="how-it-works" className="relative bg-[#0B0F19] py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
       {/* Background glow */}
@@ -51,10 +54,10 @@ export default function HowItWorks() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-4"
           >
             <Settings className="w-4 h-4 text-blue-400" />
-            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase">Deployment Protocol</span>
+            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase">{t('howItWorks.tag')}</span>
           </motion.div>
           <TextReveal 
-            text="Application Procedure" 
+            text={t('howItWorks.title')} 
             className="text-4xl sm:text-5xl font-black text-white" 
           />
         </div>
@@ -70,7 +73,7 @@ export default function HowItWorks() {
               const Icon = step.icon;
               return (
                 <motion.div
-                  key={step.number}
+                  key={i}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}

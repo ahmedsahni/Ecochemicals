@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ShieldCheck, Zap, Crosshair } from 'lucide-react';
 import TextReveal from './TextReveal';
+import { useLanguage } from '@/context/LanguageContext';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 32 },
@@ -13,6 +14,7 @@ const fadeUp = (delay = 0) => ({
 
 export default function Hero() {
   const container = useRef(null);
+  const { t, language } = useLanguage();
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end start"]
@@ -33,7 +35,7 @@ export default function Hero() {
           className="absolute inset-0 bg-[url('/images/farm_bg.png')] bg-cover bg-center opacity-[0.25] mix-blend-luminosity pointer-events-none" 
         />
         {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDQwIDAgNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48cG9seWdvbiBwb2ludHM9IjAgMCA0MCAwIDQwIDEgMCAxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+PC9zdmc+')] opacity-50" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDQwIDAgNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48cG9seWdvbiBwb2ludHM9IjAgMCA0MCAwIDQwIDEgMCAxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMEQpIi8+PC9zdmc+')] opacity-50" />
         {/* Deep blue radial glow */}
         <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-blue-900/40 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-900/30 rounded-full blur-[120px]" />
@@ -44,24 +46,32 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid lg:grid-cols-2 gap-16 items-center w-full">
 
         {/* ─── LEFT: Typography ─── */}
-        <motion.div style={{ opacity: opacityText }} className="text-center lg:text-left">
+        <motion.div style={{ opacity: opacityText }} className={language === 'ur' ? 'text-center lg:text-right' : 'text-center lg:text-left'}>
           <motion.div {...fadeUp(0)}>
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border-blue-500/30 mb-8">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500"></span>
               </span>
-              <span className="text-xs font-bold text-blue-200 tracking-[0.2em] uppercase">High-Performance Formula</span>
+              <span className="text-xs font-bold text-blue-200 tracking-[0.2em] uppercase">{t('hero.badge')}</span>
             </div>
           </motion.div>
 
           <TextReveal 
-            text="Industrial Grade Pad Descaler" 
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tight mb-6" 
+            text={t('hero.title')} 
+            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.2] tracking-tight mb-6" 
           />
 
           <motion.p {...fadeUp(0.2)} className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10 font-medium">
-            Scientifically formulated to instantly dissolve thick calcium scale and eradicate <span className="text-slate-200 font-bold border-b border-blue-500/50">Aspergillus fumigatus</span>. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations.
+            {language === 'ur' ? (
+              <>
+                سائنسی طور پر تیار کردہ جو فوری طور پر سخت کیلشیم سکیل کو پگھلاتا ہے اور <span className="text-slate-200 font-bold border-b border-blue-500/50">ایسپرجیلس فیومیگیٹس</span> جراثیم کا خاتمہ کرتا ہے۔ پاکستان کے چوٹی کے پولٹری فارمز کا واحد قابلِ اعتماد اور کاغذی پیڈز کے لیے محفوظ کیمیکل۔
+              </>
+            ) : (
+              <>
+                Scientifically formulated to instantly dissolve thick calcium scale and eradicate <span className="text-slate-200 font-bold border-b border-blue-500/50">Aspergillus fumigatus</span>. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations.
+              </>
+            )}
           </motion.p>
 
           <motion.div {...fadeUp(0.3)} className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
@@ -69,12 +79,12 @@ export default function Hero() {
               <div className="absolute inset-0 bg-blue-600 transition-all duration-300 group-hover:bg-blue-500" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.2)_50%,transparent_75%)] bg-[length:250%_250%,100%_100%] animate-[shimmer_2s_infinite]" />
               <span className="relative text-white font-bold text-base flex items-center gap-2">
-                Calculate Dosage <ArrowRight className="w-5 h-5" />
+                {t('hero.calcDosage')} <ArrowRight className={`w-5 h-5 ${language === 'ur' ? 'rotate-180' : ''}`} />
               </span>
             </a>
             
             <a href="#why-us" className="inline-flex items-center justify-center px-8 py-4 glass-panel hover:bg-white/5 text-slate-200 font-bold text-base rounded-xl transition-all">
-              View Lab Specs
+              {t('hero.viewLabSpecs')}
             </a>
           </motion.div>
 
@@ -83,23 +93,23 @@ export default function Hero() {
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2 text-blue-400">
                 <ShieldCheck className="w-4 h-4" />
-                <span className="text-[10px] font-black uppercase tracking-widest">Material</span>
+                <span className="text-[10px] font-black uppercase tracking-widest">{t('hero.material')}</span>
               </div>
-              <span className="text-sm font-bold text-slate-300">Cellulose Safe</span>
+              <span className="text-sm font-bold text-slate-300">{t('hero.celluloseSafe')}</span>
             </div>
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2 text-cyan-400">
                 <Crosshair className="w-4 h-4" />
-                <span className="text-[10px] font-black uppercase tracking-widest">Efficacy</span>
+                <span className="text-[10px] font-black uppercase tracking-widest">{t('hero.efficacy')}</span>
               </div>
-              <span className="text-sm font-bold text-slate-300">100% Fungi Kill</span>
+              <span className="text-sm font-bold text-slate-300">{t('hero.fungiKill')}</span>
             </div>
             <div className="flex flex-col gap-1">
               <div className="flex items-center gap-2 text-blue-500">
                 <Zap className="w-4 h-4" />
-                <span className="text-[10px] font-black uppercase tracking-widest">Action Time</span>
+                <span className="text-[10px] font-black uppercase tracking-widest">{t('hero.actionTime')}</span>
               </div>
-              <span className="text-sm font-bold text-slate-300">Fast Acting (3 hrs)</span>
+              <span className="text-sm font-bold text-slate-300">{t('hero.fastActing')}</span>
             </div>
           </motion.div>
         </motion.div>
@@ -130,16 +140,16 @@ export default function Hero() {
             </div>
 
             {/* High-tech orange badge */}
-            <div className="absolute -top-4 -left-6 z-40 w-24 h-24 rounded-2xl bg-[#0B0F19] border border-orange-500/50 shadow-[0_0_30px_rgba(249,115,22,0.3)] flex flex-col items-center justify-center rotate-[-6deg] backdrop-blur-md">
+            <div className={`absolute -top-4 ${language === 'ur' ? '-right-6' : '-left-6'} z-40 w-24 h-24 rounded-2xl bg-[#0B0F19] border border-orange-500/50 shadow-[0_0_30px_rgba(249,115,22,0.3)] flex flex-col items-center justify-center rotate-[-6deg] backdrop-blur-md`}>
               <div className="absolute inset-0 bg-orange-500/10 rounded-2xl" />
-              <span className="text-[9px] text-orange-400 font-black tracking-[0.2em] uppercase leading-none mb-1">Vol</span>
-              <span className="text-3xl font-black text-white leading-none">25<span className="text-orange-500">L</span></span>
+              <span className="text-[9px] text-orange-400 font-black tracking-[0.2em] uppercase leading-none mb-1">{t('hero.vol')}</span>
+              <span className="text-3xl font-black text-white leading-none">{language === 'ur' ? '۲۵' : '25'}<span className="text-orange-500">{language === 'ur' ? 'لیٹر' : 'L'}</span></span>
             </div>
             
             {/* Holographic brand pill */}
-            <div className="absolute -bottom-2 -right-2 z-40 glass-panel border-cyan-500/30 px-4 py-2 rounded-lg flex items-center gap-2">
+            <div className={`absolute -bottom-2 ${language === 'ur' ? '-left-2' : '-right-2'} z-40 glass-panel border-cyan-500/30 px-4 py-2 rounded-lg flex items-center gap-2`}>
               <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-              <span className="text-[10px] font-black text-cyan-50 tracking-widest uppercase">ECO Labs</span>
+              <span className="text-[10px] font-black text-cyan-50 tracking-widest uppercase">{t('hero.brand')}</span>
             </div>
           </div>
         </motion.div>

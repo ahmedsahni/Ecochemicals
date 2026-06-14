@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Droplet } from 'lucide-react';
-
+import { Menu, X, Droplet, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -16,11 +17,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Product', href: '#product' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Why Us', href: '#why-us' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: t('navbar.product'), href: '#product' },
+    { name: t('navbar.howItWorks'), href: '#how-it-works' },
+    { name: t('navbar.whyUs'), href: '#why-us' },
+    { name: t('navbar.testimonials'), href: '#testimonials' },
+    { name: t('navbar.contact'), href: '#contact' },
   ];
 
   return (
@@ -39,8 +40,11 @@ export default function Navbar() {
               <Droplet className="w-6 h-6 fill-current drop-shadow-md" />
             </div>
             <div className="relative">
-              <span className="block text-xl font-black text-white tracking-tight">ECO <span className="text-blue-400">Chemicals</span></span>
-              <span className="block text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">Poultry Solutions</span>
+              <span className="block text-xl font-black text-white tracking-tight">
+                {language === 'ur' ? 'ایکو ' : 'ECO '}
+                <span className="text-blue-400">{language === 'ur' ? 'کیمیکلز' : 'Chemicals'}</span>
+              </span>
+              <span className="block text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">{t('navbar.logoSub')}</span>
             </div>
           </a>
 
@@ -59,6 +63,14 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="hidden md:flex items-center gap-4">
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold text-slate-300 hover:text-white hover:bg-white/10 border border-slate-700/50 transition-all duration-200 cursor-pointer"
+            >
+              <Globe className="w-4 h-4 text-blue-400" />
+              {t('navbar.languageBtn')}
+            </button>
+            
             <motion.a 
               href="#contact" 
               className="relative group overflow-hidden rounded-xl"
@@ -68,7 +80,7 @@ export default function Navbar() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 transition-transform duration-300 group-hover:scale-105" />
               <div className="relative px-6 py-2.5 text-sm font-bold text-white flex items-center gap-2">
-                Get Quote
+                {t('navbar.getQuote')}
                 <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
               </div>
             </motion.a>
@@ -91,8 +103,15 @@ export default function Navbar() {
               </a>
             ))}
             <div className="h-px bg-white/10 my-2" />
+            <button 
+              onClick={() => { toggleLanguage(); setIsOpen(false); }}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-base font-bold text-slate-200 hover:bg-white/10 border border-slate-700/50 transition-all duration-200 mb-2 cursor-pointer"
+            >
+              <Globe className="w-5 h-5 text-blue-400" />
+              {t('navbar.languageBtn')}
+            </button>
             <a href="#contact" onClick={() => setIsOpen(false)} className="px-4 py-3 rounded-xl bg-blue-600 text-white font-bold text-center border border-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-              Get Free Quote
+              {t('navbar.getFreeQuote')}
             </a>
           </div>
         </div>

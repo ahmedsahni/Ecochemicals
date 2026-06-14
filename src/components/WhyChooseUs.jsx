@@ -4,51 +4,54 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, ShieldCheck, Leaf, TrendingDown, Layers, FlaskConical } from 'lucide-react';
 import TextReveal from './TextReveal';
-
-const features = [
-  {
-    icon: Zap,
-    title: 'Bio-Surfactant Formula',
-    desc: 'Rapidly penetrates and cuts through thick calcium scale and organic biofilm in hours.',
-    color: 'text-cyan-400',
-    glow: 'from-cyan-500/20',
-    span: '',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Pathogen Elimination',
-    desc: 'Targeted destruction of Aspergillus fumigatus spores preventing brooder pneumonia.',
-    color: 'text-blue-500',
-    glow: 'from-blue-500/20',
-    span: '',
-  },
-  {
-    icon: FlaskConical,
-    title: 'Cellulose Integrity',
-    desc: 'Scientifically engineered to preserve delicate paper fibers. Cleans without melting pads.',
-    color: 'text-orange-400',
-    glow: 'from-orange-500/20',
-    span: '',
-  },
-  {
-    icon: TrendingDown,
-    title: 'Optimized Economics',
-    desc: 'High concentration allows one 25L canister to service a complete commercial shed matrix.',
-    color: 'text-emerald-400',
-    glow: 'from-emerald-500/20',
-    span: '',
-  },
-  {
-    icon: Leaf,
-    title: 'Environmental Compliance',
-    desc: 'Breaks down naturally post-flush. Leaves zero toxic residual in soil or effluent water.',
-    color: 'text-blue-400',
-    glow: 'from-blue-500/20',
-    span: 'lg:col-span-2',
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function WhyChooseUs() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Zap,
+      title: t('whyChooseUs.feat1Title'),
+      desc: t('whyChooseUs.feat1Desc'),
+      color: 'text-cyan-400',
+      glow: 'from-cyan-500/20',
+      span: '',
+    },
+    {
+      icon: ShieldCheck,
+      title: t('whyChooseUs.feat2Title'),
+      desc: t('whyChooseUs.feat2Desc'),
+      color: 'text-blue-500',
+      glow: 'from-blue-500/20',
+      span: '',
+    },
+    {
+      icon: FlaskConical,
+      title: t('whyChooseUs.feat3Title'),
+      desc: t('whyChooseUs.feat3Desc'),
+      color: 'text-orange-400',
+      glow: 'from-orange-500/20',
+      span: '',
+    },
+    {
+      icon: TrendingDown,
+      title: t('whyChooseUs.feat4Title'),
+      desc: t('whyChooseUs.feat4Desc'),
+      color: 'text-emerald-400',
+      glow: 'from-emerald-500/20',
+      span: '',
+    },
+    {
+      icon: Leaf,
+      title: t('whyChooseUs.feat5Title'),
+      desc: t('whyChooseUs.feat5Desc'),
+      color: 'text-blue-400',
+      glow: 'from-blue-500/20',
+      span: 'lg:col-span-2',
+    },
+  ];
+
   return (
     <section id="why-us" className="relative bg-[#0B0F19] py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -62,10 +65,10 @@ export default function WhyChooseUs() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-4"
           >
             <Layers className="w-4 h-4 text-cyan-400" />
-            <span className="text-xs font-bold text-cyan-300 tracking-widest uppercase">Technical Superiority</span>
+            <span className="text-xs font-bold text-cyan-300 tracking-widest uppercase">{t('whyChooseUs.tag')}</span>
           </motion.div>
           <TextReveal 
-            text="Engineered for Maximum Efficiency" 
+            text={t('whyChooseUs.title')} 
             className="text-4xl sm:text-5xl font-black text-white leading-tight" 
           />
         </div>
@@ -85,16 +88,16 @@ export default function WhyChooseUs() {
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/20 to-transparent opacity-90" />
-            <div className="absolute bottom-8 left-8 right-8">
-              <h3 className="text-2xl font-black text-white mb-2">Ensuring Ultimate Flock Health</h3>
-              <p className="text-slate-300 font-medium text-sm max-w-md">Our chemical engineering guarantees a hygienic, pathogen-free environment, directly maximizing bird health and farm yield.</p>
+            <div className="absolute bottom-8 left-8 right-8 text-right lg:text-left">
+              <h3 className="text-2xl font-black text-white mb-2">{t('whyChooseUs.bentoTitle')}</h3>
+              <p className="text-slate-300 font-medium text-sm max-w-md">{t('whyChooseUs.bentoDesc')}</p>
             </div>
           </motion.div>
           {features.map((feat, i) => {
             const Icon = feat.icon;
             return (
                <motion.div
-                key={feat.title}
+                key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}

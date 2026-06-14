@@ -16,10 +16,12 @@ import LeadForm from '@/components/LeadForm';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Dashboard from '@/components/Dashboard';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Home() {
   const [isAdminView, setIsAdminView] = useState(false);
   const [prefilledMsg, setPrefilledMsg] = useState('');
+  const { dir } = useLanguage();
 
   useEffect(() => {
     const handleHashChange = () => setIsAdminView(window.location.hash === '#admin');
@@ -38,7 +40,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-slate-50 selection:bg-blue-600 selection:text-white">
+    <div dir={dir} className="min-h-screen bg-[#0B0F19] text-slate-50 selection:bg-blue-600 selection:text-white">
       <Navbar />
 
       <main className="relative">

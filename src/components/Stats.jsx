@@ -2,15 +2,18 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const stats = [
-  { value: '500+', label: 'Farms Served' },
-  { value: '25L',  label: 'Commercial Pack' },
-  { value: '100%', label: 'Fungi Eliminated' },
-  { value: '4°C',  label: 'Avg Temp Drop' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Stats() {
+  const { t } = useLanguage();
+
+  const stats = [
+    { value: t('stats.servedVal'), label: t('stats.servedLabel') },
+    { value: t('stats.packVal'),  label: t('stats.packLabel') },
+    { value: t('stats.fungiVal'), label: t('stats.fungiLabel') },
+    { value: t('stats.tempVal'),  label: t('stats.tempLabel') },
+  ];
+
   return (
     <section className="bg-[#0B0F19] py-16 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +22,7 @@ export default function Stats() {
           <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
               <motion.div
-                key={stat.label}
+                key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

@@ -6,18 +6,20 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Loader2, CheckCircle2, MessageSquare, PhoneCall, ArrowRight, User, MapPin, Building2, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  company: z.string().min(2, "Farm/Company name is required"),
-  phone: z.string().min(10, "Valid phone number is required"),
-  city: z.string().min(2, "City is required"),
-  message: z.string().optional(),
-});
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function LeadForm({ prefilledMessage }) {
+  const { t, language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const formSchema = z.object({
+    name: z.string().min(2, t('leadForm.errName')),
+    company: z.string().min(2, t('leadForm.errCompany')),
+    phone: z.string().min(10, t('leadForm.errPhone')),
+    city: z.string().min(2, t('leadForm.errCity')),
+    message: z.string().optional(),
+  });
 
   const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm({
     resolver: zodResolver(formSchema),
@@ -42,7 +44,9 @@ export default function LeadForm({ prefilledMessage }) {
       reset();
       setTimeout(() => setIsSuccess(false), 5000);
     } catch (error) {
-      alert("System Error: Could not transmit data. Please contact via WhatsApp.");
+      alert(language === 'ur' 
+        ? "سسٹم کی خرابی: ڈیٹا منتقل نہیں ہو سکا۔ براہ کرم واٹس ایپ پر رابطہ کریں۔" 
+        : "System Error: Could not transmit data. Please contact via WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }
@@ -60,26 +64,29 @@ export default function LeadForm({ prefilledMessage }) {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
+          className={language === 'ur' ? 'text-right' : 'text-left'}
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6">
             <Send className="w-4 h-4 text-blue-400" />
-            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase">Direct Transmission</span>
+            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase">{t('leadForm.tag')}</span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
-            Request Official <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Quotation</span>
+            {t('leadForm.title')} <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              {t('leadForm.titleGlow')}
+            </span>
           </h2>
           <p className="text-slate-400 leading-relaxed font-medium mb-10 max-w-md">
-            Transmit your farm specifications to our chemical engineering team. We will calculate exact dosage requirements and dispatch commercial pricing.
+            {t('leadForm.desc')}
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-6 flex flex-col items-start lg:items-stretch">
             <div className="flex items-center gap-4 p-4 glass-panel rounded-2xl w-fit border border-emerald-500/20">
               <div className="p-3 bg-emerald-500/20 rounded-xl">
                 <MessageSquare className="w-6 h-6 text-emerald-400" />
               </div>
-              <div>
-                <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">WhatsApp Priority Channel</p>
+              <div className={language === 'ur' ? 'text-right' : 'text-left'}>
+                <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">{t('leadForm.waPriority')}</p>
                 <a href="https://wa.me/923214858418" target="_blank" rel="noreferrer" className="text-xl font-bold text-white hover:text-emerald-300 transition-colors">
                   +92 321 4858418
                 </a>
@@ -90,9 +97,9 @@ export default function LeadForm({ prefilledMessage }) {
               <div className="p-3 bg-blue-500/20 rounded-xl">
                 <PhoneCall className="w-6 h-6 text-blue-400" />
               </div>
-              <div>
-                <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">Corporate HQ (Sargodha)</p>
-                <p className="text-xl font-bold text-white">0322 6057885</p>
+              <div className={language === 'ur' ? 'text-right' : 'text-left'}>
+                <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">{t('leadForm.hqLabel')}</p>
+                <p className="text-xl font-bold text-white">{language === 'ur' ? '۰۳۲۲ ۶۰۵۷۸۸۵' : '0322 6057885'}</p>
               </div>
             </div>
           </div>
@@ -110,27 +117,27 @@ export default function LeadForm({ prefilledMessage }) {
               <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6 border border-emerald-500/50 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
                 <CheckCircle2 className="w-10 h-10 text-emerald-400" />
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">Transmission Successful</h3>
-              <p className="text-slate-400 font-medium">Our engineering team has received your telemetry and will respond shortly.</p>
+              <h3 className="text-2xl font-black text-white mb-2">{t('leadForm.successTitle')}</h3>
+              <p className="text-slate-400 font-medium">{t('leadForm.successDesc')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Agent Name</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelName')}</label>
                   <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
-                    <input {...register('name')} placeholder="Full Name" className="w-full pl-12 pr-4 py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium" />
+                    <User className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
+                    <input {...register('name')} placeholder={t('leadForm.placeholderName')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.name && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.name.message}</p>}
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Farm / Integration</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelCompany')}</label>
                   <div className="relative">
-                    <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
-                    <input {...register('company')} placeholder="Company Name" className="w-full pl-12 pr-4 py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium" />
+                    <Building2 className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
+                    <input {...register('company')} placeholder={t('leadForm.placeholderCompany')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.company && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.company.message}</p>}
                 </div>
@@ -138,29 +145,29 @@ export default function LeadForm({ prefilledMessage }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Comms (Phone)</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelPhone')}</label>
                   <div className="relative">
-                    <PhoneCall className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
-                    <input {...register('phone')} placeholder="03xx xxxxxxx" className="w-full pl-12 pr-4 py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium" />
+                    <PhoneCall className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
+                    <input {...register('phone')} placeholder={t('leadForm.placeholderPhone')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.phone && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.phone.message}</p>}
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Location</label>
+                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelLocation')}</label>
                   <div className="relative">
-                    <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
-                    <input {...register('city')} placeholder="City" className="w-full pl-12 pr-4 py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium" />
+                    <MapPin className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
+                    <input {...register('city')} placeholder={t('leadForm.placeholderCity')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.city && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.city.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Telemetry / Details</label>
+                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelMsg')}</label>
                 <textarea 
                   {...register('message')} 
-                  placeholder="Additional details or pasted calculator data..." 
+                  placeholder={t('leadForm.placeholderMsg')} 
                   rows={4}
                   className="w-full px-4 py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium resize-none" 
                 />
@@ -169,10 +176,10 @@ export default function LeadForm({ prefilledMessage }) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-50 disabled:cursor-not-allowed mt-4"
+                className="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] disabled:opacity-50 disabled:cursor-not-allowed mt-4 cursor-pointer"
               >
                 {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : (
-                  <>Transmit Request <ArrowRight className="w-5 h-5" /></>
+                  <>{t('leadForm.submitBtn')} <ArrowRight className={`w-5 h-5 ${language === 'ur' ? 'rotate-180' : ''}`} /></>
                 )}
               </button>
             </form>

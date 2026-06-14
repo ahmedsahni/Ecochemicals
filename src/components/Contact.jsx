@@ -3,8 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, MessageSquare, MapPin, Building2, Clock, Globe } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Contact() {
+  const { t, language } = useLanguage();
+
   return (
     <section id="contact-info" className="bg-[#0B0F19] py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
       <div className="max-w-7xl mx-auto">
@@ -17,7 +20,7 @@ export default function Contact() {
             viewport={{ once: true }}
             className="text-xs font-bold text-cyan-400 tracking-[0.25em] uppercase mb-4"
           >
-            Network Infrastructure
+            {t('contact.tag')}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -26,7 +29,10 @@ export default function Contact() {
             transition={{ delay: 0.1 }}
             className="text-4xl sm:text-5xl font-black text-white"
           >
-            Establish <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Connection</span>
+            {t('contact.title')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              {t('contact.titleGlow')}
+            </span>
           </motion.h2>
         </div>
 
@@ -45,7 +51,7 @@ export default function Contact() {
                   <Building2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Head Office</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.hqLabel')}</p>
                   <p className="text-lg font-extrabold text-white">ECO Chemicals</p>
                 </div>
               </div>
@@ -55,9 +61,9 @@ export default function Contact() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Service Region</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.regionLabel')}</p>
                   <p className="text-sm font-semibold text-slate-300">
-                    Sargodha (HQ), Azizabad Mingora Swat (Production) & nationwide delivery across Pakistan.
+                    {t('contact.regionVal')}
                   </p>
                 </div>
               </div>
@@ -67,18 +73,18 @@ export default function Contact() {
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Business Hours</p>
-                  <p className="text-sm font-semibold text-slate-300">Mon – Sat: 09:00 AM – 06:00 PM (PKT)</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.hoursLabel')}</p>
+                  <p className="text-sm font-semibold text-slate-300">{t('contact.hoursVal')}</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-8 border-t border-slate-800 pt-6">
               <div className="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">
-                <Globe className="w-4 h-4" /> Nationwide Logistics
+                <Globe className="w-4 h-4" /> {t('contact.logisticsLabel')}
               </div>
               <p className="text-xs text-slate-500 leading-relaxed">
-                We deliver Cleanex canisters directly to your farm gate via reliable courier networks. Cash on delivery available for approved farms.
+                {t('contact.logisticsVal')}
               </p>
             </div>
           </motion.div>
@@ -98,14 +104,14 @@ export default function Contact() {
                 <div className="inline-flex p-3 rounded-2xl bg-blue-500/20 border border-blue-500/30 text-blue-400 mb-4 shadow-[0_0_15px_rgba(37,99,235,0.3)]">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white">Primary Comms</h3>
-                <p className="text-xs text-slate-400 mt-1">Direct channel for logistics & payload queries.</p>
+                <h3 className="text-lg font-bold text-white">{t('contact.primaryTitle')}</h3>
+                <p className="text-xs text-slate-400 mt-1">{t('contact.primaryDesc')}</p>
               </div>
               <a
                 href="tel:+923226057885"
                 className="relative z-10 mt-6 block w-full py-3 text-center rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]"
               >
-                +92 322 6057885
+                {language === 'ur' ? '+۹۲ ۳۲۲ ۶۰۵۷۸۸۵' : '+92 322 6057885'}
               </a>
             </div>
 
@@ -116,27 +122,27 @@ export default function Contact() {
                 <div className="inline-flex p-3 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 mb-4 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white">Secondary Link</h3>
-                <p className="text-xs text-slate-400 mt-1">Technical analysis & site inspections.</p>
+                <h3 className="text-lg font-bold text-white">{t('contact.secondaryTitle')}</h3>
+                <p className="text-xs text-slate-400 mt-1">{t('contact.secondaryDesc')}</p>
               </div>
               <a
                 href="tel:+923214858418"
                 className="relative z-10 mt-6 block w-full py-3 text-center rounded-xl border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/20 font-bold text-sm transition-all"
               >
-                +92 321 4858418
+                {language === 'ur' ? '+۹۲ ۳۲۱ ۴۸۵۸۴۱۸' : '+92 321 4858418'}
               </a>
             </div>
 
             {/* WhatsApp */}
             <div className="sm:col-span-2 glass-panel border-emerald-500/30 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
               <div className="absolute inset-0 bg-emerald-500/5" />
-              <div className="relative z-10 flex items-center gap-4 text-center sm:text-left">
+              <div className="relative z-10 flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
                 <div className="p-4 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex-shrink-0 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                   <MessageSquare className="w-8 h-8 fill-current" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-extrabold text-white">Initiate Secure Chat</h3>
-                  <p className="text-xs text-slate-400 font-medium mt-1">Request custom telemetry and official documentation via WhatsApp.</p>
+                  <h3 className="text-lg font-extrabold text-white">{t('contact.chatTitle')}</h3>
+                  <p className="text-xs text-slate-400 font-medium mt-1">{t('contact.chatDesc')}</p>
                 </div>
               </div>
               <a
@@ -145,7 +151,7 @@ export default function Contact() {
                 rel="noreferrer"
                 className="relative z-10 flex-shrink-0 px-7 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center"
               >
-                Open WhatsApp
+                {t('contact.openWa')}
               </a>
             </div>
           </motion.div>
