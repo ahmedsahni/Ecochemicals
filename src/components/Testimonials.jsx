@@ -19,11 +19,6 @@ export default function Testimonials() {
       name: t('testimonials.t2Name'),
       role: t('testimonials.t2Role'),
     },
-    {
-      quote: t('testimonials.t3Quote'),
-      name: t('testimonials.t3Name'),
-      role: t('testimonials.t3Role'),
-    },
   ];
 
   return (
@@ -54,7 +49,7 @@ export default function Testimonials() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}

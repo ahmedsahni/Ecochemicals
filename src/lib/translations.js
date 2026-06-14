@@ -137,10 +137,7 @@ export const translations = {
       t1Role: "Production Manager, K&N's",
       t2Quote: "We used to replace cellulose pads every 2 years because of hard calcium water. Regular washing with Cleanex prevented scaling completely without damaging the paper. It saved us millions in replacement costs.",
       t2Name: "Tariq Mehmood",
-      t2Role: "Operations Head, Sabroso",
-      t3Quote: "The Aspergillus kill-rate is exactly as advertised. We had zero brooder pneumonia cases in the flock following the chemical wash. Highly recommended for commercial layers.",
-      t3Name: "M. Usman",
-      t3Role: "Farm Director, Jadeed Group"
+      t2Role: "Operations Head, Sabroso"
     },
     leadForm: {
       tag: "Direct Transmission",
@@ -337,10 +334,7 @@ export const translations = {
       t1Role: "پروڈکشن منیجر، کے اینڈ اینز (K&N's)",
       t2Quote: "ہم کھارے پانی کی وجہ سے ہر ۲ سال بعد کولنگ پیڈز تبدیل کرتے تھے۔ کلینکس سے باقاعدگی سے دھونے کی وجہ سے پیڈز پر کیلشیم بالکل نہیں جما اور کاغذ بھی محفوظ رہا۔ اس سے ہمارے لاکھوں روپے بچ گئے۔",
       t2Name: "طارق محمود",
-      t2Role: "آپریشنز ہیڈ، سبروسو (Sabroso)",
-      t3Quote: "فنگس کے خاتمے کی شرح بالکل درست ہے۔ کیمیکل واش کے بعد چوزوں میں سانس کی فنگل بیماری کا کوئی کیس سامنے نہیں آیا۔ کمرشل لیئرز کے لیے بہترین کیمیکل ہے۔",
-      t3Name: "ایم عثمان",
-      t3Role: "فارم ڈائریکٹر، جدید گروپ (Jadeed Group)"
+      t2Role: "آپریشنز ہیڈ، سبروسو (Sabroso)"
     },
     leadForm: {
       tag: "کوٹیشن فارم",
@@ -392,7 +386,7 @@ export const translations = {
       industrialBadge: "صنعتی گریڈ",
       navTitle: "نیویگیشن",
       contactTitle: "رابطہ ہیڈ آفس",
-      hqLocation: "سرگودھا، پاکستان",
+      hqLocation: "سرگودھا, پاکستان",
       copyright: "جملہ حقوق محفوظ ہیں۔",
       madeBy: "ایونڈم کی تخلیق",
       privacy: "رازداری کی پالیسی",
