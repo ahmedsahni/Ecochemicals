@@ -4,7 +4,7 @@ import React from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 
 const partners = [
-  "K&N's Foods", "Sabroso", "Big Bird", "SB Poultry", "Al-Rehman Farms", "Punjab Broilers",
+  "K&N's Foods", "Sabroso", "SB Poultry", "Al-Rehman Farms", "Punjab Broilers",
 ];
 
 export default function Partners() {
