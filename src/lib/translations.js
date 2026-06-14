@@ -31,8 +31,8 @@ export const translations = {
       title: "Trusted by Industry Leaders"
     },
     stats: {
-      servedVal: "500+",
-      servedLabel: "Farms Served",
+      servedVal: "5000+",
+      servedLabel: "Sheds Served",
       packVal: "25L",
       packLabel: "Commercial Pack",
       fungiVal: "100%",
@@ -228,8 +228,8 @@ export const translations = {
       title: "صنعت کے رہنماؤں کا بھروسہ"
     },
     stats: {
-      servedVal: "۵۰۰+",
-      servedLabel: "فارمز جن کو خدمات دیں",
+      servedVal: "۵۰۰۰+",
+      servedLabel: "شیڈز جن کو خدمات دیں",
       packVal: "۲۵ لیٹر",
       packLabel: "کمرشل پیکنگ",
       fungiVal: "۱۰۰٪",
