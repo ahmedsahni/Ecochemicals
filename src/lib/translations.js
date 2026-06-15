@@ -14,7 +14,7 @@ export const translations = {
     },
     hero: {
       badge: "High-Performance Formula",
-      title: "Industrial Grade Cooling Pad Wash",
+      title: "Cleanex Pad Cleaner",
       desc: "Scientifically formulated to prevent calcium scaling, eradicate Aspergillus fumigatus, and sanitize cooling pads. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations for preventative pad washing.",
       calcDosage: "Calculate Dosage",
       viewLabSpecs: "View Lab Specs",
@@ -83,7 +83,7 @@ export const translations = {
       specTarget: "Target Pathogens",
       specTargetVal: "Aspergillus fumigatus spores, pathogenic biofilm, algae mats",
       specForm: "Form Factor",
-      specFormVal: "25 Liters Industrial HDPE Canister",
+      specFormVal: "25 Liters Premium HDPE Canister",
       specDosing: "Dosing Ratio",
       specDosingVal: "7L per 1000L water",
       hazardTitle: "Hazard Protocol:",
@@ -184,9 +184,9 @@ export const translations = {
       openWa: "Open WhatsApp"
     },
     footer: {
-      desc: "Pakistan's leading chemical engineering firm for commercial poultry infrastructure. Specialized in high-performance descalers and sanitizers.",
+      desc: "Pakistan's leading chemical engineering firm for commercial poultry infrastructure. Specialized in high-performance pad washes and sanitizers.",
       isoBadge: "ISO 9001",
-      industrialBadge: "Industrial Grade",
+      industrialBadge: "Premium Grade",
       navTitle: "Navigation",
       contactTitle: "Contact HQ",
       hqLocation: "Sargodha, Pakistan",
@@ -211,7 +211,7 @@ export const translations = {
     },
     hero: {
       badge: "اعلیٰ کارکردگی فارمولا",
-      title: "صنعتی گریڈ کولنگ پیڈ واش",
+      title: "کلینکس پیڈ کلینر",
       desc: "سائنسی طور پر تیار کردہ جو کیلشیم سکیل کو جمنے سے روکتا ہے، ایسپرجیلس فیومیگیٹس جراثیم کا خاتمہ کرتا ہے اور پیڈز کو صاف رکھتا ہے۔ پاکستان کے چوٹی کے پولٹری فارمز کا واحد قابلِ اعتماد اور کاغذی پیڈز کے لیے محفوظ کیمیکل جو پیڈز کو دھونے کے لیے استعمال ہوتا ہے۔",
       calcDosage: "خوراک کا حساب لگائیں",
       viewLabSpecs: "لیب کی تفصیلات دیکھیں",
@@ -280,7 +280,7 @@ export const translations = {
       specTarget: "نشانہ بننے والے جراثیم",
       specTargetVal: "ایسپرجیلس فنگس جراثیم، نقصان دہ جراثیمی تہیں، اور کائی",
       specForm: "پیکنگ کی قسم",
-      specFormVal: "۲۵ لیٹر مضبوط صنعتی کین",
+      specFormVal: "۲۵ لیٹر مضبوط پریمیم کین",
       specDosing: "استعمال کی مقدار",
       specDosingVal: "۷ لیٹر فی ۱۰۰۰ لیٹر پانی",
       hazardTitle: "حفاظتی ہدایات:",
@@ -381,9 +381,9 @@ export const translations = {
       openWa: "واٹس ایپ کھولیں"
     },
     footer: {
-      desc: "کمرشل پولٹری انفراسٹرکچر کے لیے پاکستان کی معروف کیمیکل انجینئرنگ فرم۔ اعلیٰ کارکردگی والے ڈیسکیلرز اور سینیٹائزرز کی تیاری میں مہارت۔",
+      desc: "کمرشل پولٹری انفراسٹرکچر کے لیے پاکستان کی معروف کیمیکل انجینئرنگ فرم۔ اعلیٰ کارکردگی والے پیڈ واشز اور سینیٹائزرز کی تیاری میں مہارت۔",
       isoBadge: "آئی ایس او 9001",
-      industrialBadge: "صنعتی گریڈ",
+      industrialBadge: "پریمیم گریڈ",
       navTitle: "نیویگیشن",
       contactTitle: "رابطہ ہیڈ آفس",
       hqLocation: "سرگودھا, پاکستان",

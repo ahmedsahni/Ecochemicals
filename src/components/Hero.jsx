@@ -65,11 +65,11 @@ export default function Hero() {
           <motion.p {...fadeUp(0.2)} className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10 font-medium">
             {language === 'ur' ? (
               <>
-                سائنسی طور پر تیار کردہ جو فوری طور پر سخت کیلشیم سکیل کو پگھلاتا ہے اور <span className="text-slate-200 font-bold border-b border-blue-500/50">ایسپرجیلس فیومیگیٹس</span> جراثیم کا خاتمہ کرتا ہے۔ پاکستان کے چوٹی کے پولٹری فارمز کا واحد قابلِ اعتماد اور کاغذی پیڈز کے لیے محفوظ کیمیکل۔
+                سائنسی طور پر تیار کردہ جو کیلشیم سکیل کو جمنے سے روکتا ہے، <span className="text-slate-200 font-bold border-b border-blue-500/50">ایسپرجیلس فیومیگیٹس</span> جراثیم کا خاتمہ کرتا ہے اور پیڈز کو صاف رکھتا ہے۔ پاکستان کے چوٹی کے پولٹری فارمز کا واحد قابلِ اعتماد اور کاغذی پیڈز کے لیے محفوظ کیمیکل جو پیڈز کو دھونے کے لیے استعمال ہوتا ہے۔
               </>
             ) : (
               <>
-                Scientifically formulated to instantly dissolve thick calcium scale and eradicate <span className="text-slate-200 font-bold border-b border-blue-500/50">Aspergillus fumigatus</span>. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations.
+                Scientifically formulated to prevent calcium scaling, eradicate <span className="text-slate-200 font-bold border-b border-blue-500/50">Aspergillus fumigatus</span>, and sanitize cooling pads. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations for preventative pad washing.
               </>
             )}
           </motion.p>
