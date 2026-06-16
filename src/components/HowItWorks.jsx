@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Settings, Droplets, ThermometerSun, ShieldCheck } from 'lucide-react';
+import { Settings, MessageSquare, Calculator, Package, UserCheck } from 'lucide-react';
 import TextReveal from './TextReveal';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -12,28 +12,28 @@ export default function HowItWorks() {
   const steps = [
     {
       number: language === 'ur' ? "۰۱" : "01",
-      icon: Droplets,
+      icon: MessageSquare,
       title: t('howItWorks.step1Title'),
       desc: t('howItWorks.step1Desc'),
       color: 'text-blue-400',
     },
     {
       number: language === 'ur' ? "۰۲" : "02",
-      icon: Settings,
+      icon: Calculator,
       title: t('howItWorks.step2Title'),
       desc: t('howItWorks.step2Desc'),
       color: 'text-cyan-400',
     },
     {
       number: language === 'ur' ? "۰۳" : "03",
-      icon: ShieldCheck,
+      icon: Package,
       title: t('howItWorks.step3Title'),
       desc: t('howItWorks.step3Desc'),
       color: 'text-emerald-400',
     },
     {
       number: language === 'ur' ? "۰۴" : "04",
-      icon: ThermometerSun,
+      icon: UserCheck,
       title: t('howItWorks.step4Title'),
       desc: t('howItWorks.step4Desc'),
       color: 'text-orange-400',

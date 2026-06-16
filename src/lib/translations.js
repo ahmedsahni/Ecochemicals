@@ -111,16 +111,29 @@ export const translations = {
       buttonText: "Transfer Data to Quote"
     },
     howItWorks: {
-      tag: "Deployment Protocol",
-      title: "Application Procedure",
-      step1Title: "Chemical Injection",
-      step1Desc: "Inject Cleanex directly into the main water tank using the recommended dosing ratio based on matrix scaling severity.",
-      step2Title: "System Circulation",
-      step2Desc: "Run the water circulation pumps without exhaust fans for 2-3 hours. This allows the bio-surfactants to penetrate deep into the cellulose matrix.",
-      step3Title: "Scale Prevention & Flush",
-      step3Desc: "The formula chemically prevents hard calcium bonds and eradicates fungal spores. Flush the system with clean water to remove any loose debris.",
-      step4Title: "Thermal Drop",
-      step4Desc: "Re-engage exhaust fans. The newly restored airflow capacity immediately drops internal shed temperatures by up to 4°C."
+      tag: "Service Workflow",
+      title: "How We Work With You",
+      step1Title: "Telemetry & Consultation",
+      step1Desc: "Transmit your farm dimensions and water conditions to our specialists for initial analysis.",
+      step2Title: "Custom Calculations",
+      step2Desc: "Our chemical engineering team calculates the exact dosage formulation required for your cooling pad matrix.",
+      step3Title: "Secure Dispatch",
+      step3Desc: "We dispatch premium Cleanex canisters directly to your farm gate via our reliable national logistics network.",
+      step4Title: "Guided Application",
+      step4Desc: "Our dedicated engineers provide step-by-step chemical application guidance exclusively to verified customers."
+    },
+    brochureShowcase: {
+      tag: "Official Brochure",
+      title: "Cleanex Product",
+      titleGlow: "Flyer & Benefits",
+      viewFull: "View Full Brochure",
+      close: "Close",
+      f1Title: "Foaming Action & Pad Friendly",
+      f1Desc: "Deeply penetrates pad pores without melting or damaging cellulose fibers.",
+      f2Title: "Safe in Presence of Birds",
+      f2Desc: "Recommended by vets. Can be applied while birds are in the shed without health risks.",
+      f3Title: "100% Quality Guarantee",
+      f3Desc: "Proven formulation trusted by leading poultry groups like K&N's and Sabirs'."
     },
     whyChooseUs: {
       tag: "Technical Edge",
@@ -318,16 +331,29 @@ export const translations = {
       buttonText: "معلومات کو کوٹیشن فارم میں بھیجیں"
     },
     howItWorks: {
-      tag: "استعمال کا طریقہ",
-      title: "کیمیکل ڈالنے کا طریقہ کار",
-      step1Title: "کیمیکل کا اضافہ",
-      step1Desc: "کیلشیم سکیل کی شدت کے مطابق بتائی گئی مقدار کے تحت کلینکس کو براہِ راست پانی کے مین ٹینک میں ڈالیں۔",
-      step2Title: "سسٹم میں گردش",
-      step2Desc: "ہوا خارج کرنے والے پنکھے (ایگزاسٹ فین) بند کر کے پانی کے پمپ کو ۲ سے ۳ گھنٹے تک چلائیں۔ اس سے فارمولا پیڈ کے اندر تک سرایت کر جاتا ہے۔",
-      step3Title: "سکیل سے بچاؤ اور فلشنگ",
-      step3Desc: "یہ فارمولا سخت کیلشیم کے بانڈز کو بننے سے روکتا ہے اور فنگس کا خاتمہ کرتا ہے۔ کچرا نکالنے کے لیے سسٹم کو صاف پانی سے دھوئیں۔",
-      step4Title: "درجہ حرارت میں کمی",
-      step4Desc: "پنکھے دوبارہ چلا دیں۔ ہوا کا بہاؤ بحال ہونے سے شیڈ کا اندرونی درجہ حرارت فوری طور پر ۴ ڈگری تک گر جائے گا۔"
+      tag: "ہمارا طریقہ کار",
+      title: "رابطہ سے استعمال تک",
+      step1Title: "معلومات اور رابطہ",
+      step1Desc: "سب سے پہلے آپ اپنے شیڈ کے سائز اور پانی کی حالت کے بارے میں ہماری ٹیم کو تفصیلات فراہم کریں۔",
+      step2Title: "کیمیکل کا تخمینہ",
+      step2Desc: "ہماری انجینئرنگ ٹیم آپ کی فراہم کردہ معلومات کے مطابق درکار کیمیکل کی صحیح مقدار کا حساب لگاتی ہے۔",
+      step3Title: "محفوظ ترسیل",
+      step3Desc: "ہم کلینکس کینز کو براہِ راست آپ کے فارم کے گیٹ تک محفوظ ملک گیر کورئیر نیٹ ورک کے ذریعے پہنچاتے ہیں۔",
+      step4Title: "خصوصی رہنمائی",
+      step4Desc: "ہمارے تکنیکی ماہرین کیمیکل کے استعمال کا خفیہ طریقہ کار اور رہنمائی صرف تصدیق شدہ خریداروں کو فراہم کرتے ہیں۔"
+    },
+    brochureShowcase: {
+      tag: "آفیشل دستاویز",
+      title: "کلینکس آفیشل",
+      titleGlow: "پروڈکٹ بروشر",
+      viewFull: "پورا بروشر دیکھیں",
+      close: "بند کریں",
+      f1Title: "فومنگ ایکشن اور محفوظ فارمولا",
+      f1Desc: "کاغذی پیڈز کے نازک ریشوں کے لیے مکمل محفوظ اور گہرے سوراخوں کی صفائی کے لیے بہترین فومنگ اثر۔",
+      f2Title: "پرندوں کی موجودگی میں محفوظ",
+      f2Desc: "پولٹری ڈاکٹرز کا تجویز کردہ۔ شیڈ میں چوزوں یا پرندوں کی موجودگی میں بھی بلا خوف استعمال کیا جا سکتا ہے۔",
+      f3Title: "۱۰۰٪ کوالٹی اور گارنٹی",
+      f3Desc: "پاکستان کے معروف پولٹری گروپس جیسے کہ کے اینڈ اینز (K&N's) اور سبروسو (Sabirs') کا بھروسہ۔"
     },
     whyChooseUs: {
       tag: "تکنیکی مہارت",

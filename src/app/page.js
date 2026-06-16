@@ -9,6 +9,7 @@ import Stats from '@/components/Stats';
 import ProblemSolution from '@/components/ProblemSolution';
 import WinterAdvisory from '@/components/WinterAdvisory';
 import Product from '@/components/Product';
+import BrochureShowcase from '@/components/BrochureShowcase';
 import HowItWorks from '@/components/HowItWorks';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
@@ -50,6 +51,7 @@ export default function Home() {
         <ProblemSolution />
         <WinterAdvisory />
         <Product onCalculatorSubmit={setPrefilledMsg} />
+        <BrochureShowcase />
         <HowItWorks />
         <WhyChooseUs />
         <Testimonials />
