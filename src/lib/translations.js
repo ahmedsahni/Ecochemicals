@@ -83,9 +83,9 @@ export const translations = {
       tip2Warning: "Waiting for the outer surface to show dirt is a leading cause of premature pad destruction."
     },
     product: {
-      tag: "System Analytics",
+      tag: "Chemical Specs",
       title: "Chemical Profiling &",
-      titleGlow: "Calculator",
+      titleGlow: "Specifications",
       specsTitle: "Cleanex Grade A",
       specsSub: "Scientific Formulation",
       specActiveMatrix: "Active Matrix",
@@ -94,21 +94,9 @@ export const translations = {
       specTargetVal: "Aspergillus fumigatus spores, pathogenic biofilm, algae mats",
       specForm: "Form Factor",
       specFormVal: "25 Liters Premium HDPE Canister",
-      specDosing: "Dosing Ratio",
-      specDosingVal: "7L per 1000L water",
       hazardTitle: "Hazard Protocol:",
-      hazardDesc: "Protective gear recommended during handling. Ensure vigorous shaking prior to dosing the main water matrix.",
-      telemetryTitle: "Telemetry",
-      telemetryStatus: "Online",
-      lengthLabel: "Matrix Length",
-      widthLabel: "Matrix Width",
-      depthLabel: "Depth",
-      threatLevelLabel: "Threat Level",
-      threatLevelOption: "Standard Dosage (7.0L / 1000L)",
-      capacityLabel: "Capacity",
-      requiredLabel: "Required",
-      unitsLabel: "Units",
-      buttonText: "Transfer Data to Quote"
+      hazardDesc: "Protective gear recommended during handling. Ensure vigorous shaking prior to dosing.",
+      buttonText: "Request Pricing & Dosing"
     },
     howItWorks: {
       tag: "Service Workflow",
@@ -303,9 +291,9 @@ export const translations = {
       tip2Warning: "پیڈز کی بیرونی سطح گندی ہونے کا انتظار کرنا پیڈز کو ضائع کرنے میں سب سے اہم کردار ادا کرتا ہے۔"
     },
     product: {
-      tag: "سسٹم کا تجزیہ",
-      title: "کیمیائی معلومات اور",
-      titleGlow: "کیلکولیٹر",
+      tag: "کیمیائی معلومات",
+      title: "سائنسی تفصیلات اور",
+      titleGlow: "مصنوعات کی خصوصیات",
       specsTitle: "کلینکس گریڈ اے",
       specsSub: "سائنسی فارمولیشن",
       specActiveMatrix: "اہم فارمولا",
@@ -314,21 +302,9 @@ export const translations = {
       specTargetVal: "ایسپرجیلس فنگس جراثیم، نقصان دہ جراثیمی تہیں، اور کائی",
       specForm: "پیکنگ کی قسم",
       specFormVal: "۲۵ لیٹر مضبوط پریمیم کین",
-      specDosing: "استعمال کی مقدار",
-      specDosingVal: "۷ لیٹر فی ۱۰۰۰ لیٹر پانی",
       hazardTitle: "حفاظتی ہدایات:",
-      hazardDesc: "استعمال کے دوران حفاظتی دستانے پہننے کی سفارش کی جاتی ہے۔ پانی کی ٹینکی میں ڈالنے سے پہلے کین کو اچھی طرح ہلائیں۔",
-      telemetryTitle: "سسٹم ریڈنگ",
-      telemetryStatus: "آن لائن",
-      lengthLabel: "پیڈز کی لمبائی",
-      widthLabel: "پیڈز کی چوڑائی",
-      depthLabel: "موٹائی",
-      threatLevelLabel: "سکیل کی شدت",
-      threatLevelOption: "معیاری خوراک (7.0L / 1000L)",
-      capacityLabel: "پانی کی گنجائش",
-      requiredLabel: "کیمیکل درکار",
-      unitsLabel: "کین کی تعداد",
-      buttonText: "معلومات کو کوٹیشن فارم میں بھیجیں"
+      hazardDesc: "استعمال کے دوران حفاظتی دستانے پہننے کی سفارش کی جاتی ہے۔ استعمال سے پہلے کین کو اچھی طرح ہلائیں۔",
+      buttonText: "ریٹ اور مقدار کی معلومات حاصل کریں"
     },
     howItWorks: {
       tag: "ہمارا طریقہ کار",

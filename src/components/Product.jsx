@@ -1,48 +1,25 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Package, Calculator, Cpu, Beaker, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { Package, Cpu, Beaker, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Product({ onCalculatorSubmit }) {
   const { t, language } = useLanguage();
-  const [length, setLength] = useState(12);
-  const [width, setWidth] = useState(4);
-  const [depth, setDepth] = useState(3);
-  const [dirtLevel, setDirtLevel] = useState('normal');
-  const [volumeLiters, setVolumeLiters] = useState(0);
-  const [cleanexNeeded, setCleanexNeeded] = useState(0);
-  const [cansNeeded, setCansNeeded] = useState(0);
 
   const specsList = [
     { label: t('product.specActiveMatrix'), value: t('product.specActiveMatrixVal') },
     { label: t('product.specTarget'), value: t('product.specTargetVal') },
     { label: t('product.specForm'), value: t('product.specFormVal') },
-    { label: t('product.specDosing'), value: t('product.specDosingVal') },
   ];
-
-  useEffect(() => {
-    const vol = Math.round(length * width * depth * 28.3);
-    setVolumeLiters(vol);
-    const dosageRate = 7.0;
-    const chemical = parseFloat(((vol / 1000) * dosageRate).toFixed(1));
-    setCleanexNeeded(chemical);
-    setCansNeeded(Math.ceil(chemical / 25));
-  }, [length, width, depth]);
 
   const handleApply = () => {
     const summary = language === 'ur'
-      ? `سسٹم: ${volumeLiters}L (${length}×${width}×${depth} فٹ)۔ مطلوبہ حجم: ${cleanexNeeded}L (~${cansNeeded} کین)۔ تناسب: 7L فی 1000L پانی۔`
-      : `System: ${volumeLiters}L (${length}×${width}×${depth} ft). Required Volume: ${cleanexNeeded}L (~${cansNeeded} cans). Dosing: 7L per 1000L water.`;
+      ? "السلام علیکم، میں اپنے پولٹری فارم کے لیے کلینکس پیڈ کلینر کے ریٹ اور کیمیکل کی مقدار معلوم کرنا چاہتا ہوں۔"
+      : "Hello, I would like to request a quotation and recommended dosage guidelines for my poultry farm cooling pads.";
     if (onCalculatorSubmit) onCalculatorSubmit(summary);
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const getUrduNumber = (num) => {
-    if (language !== 'ur') return num;
-    const urduDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    return num.toString().replace(/\d/g, (d) => urduDigits[d]);
   };
 
   return (
@@ -118,103 +95,60 @@ export default function Product({ onCalculatorSubmit }) {
             </div>
           </motion.div>
 
-          {/* ─── Telemetry Calculator ─── */}
+          {/* ─── Product Canister Showcase ─── */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="rounded-3xl p-8 bg-[#111827] border border-blue-500/20 relative overflow-hidden"
+            className="rounded-3xl p-8 bg-[#111827] border border-blue-500/20 relative overflow-hidden flex flex-col justify-between"
           >
             {/* Cyber grid bg */}
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDIwIDAgMjAiIGZpbGw9InJnYmEoNTksMTMwLDI0NiwwLjA1KSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDIwIDAgMjAgMSAwIDEiIGZpbGw9InJnYmEoNTksMTMwLDI0NiwwLjA1KSIvPjwvc3ZnPg==')] pointer-events-none opacity-50" />
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDIwIDAgMjAiIGZpbGw9InJnYmEoNTksMTMwLDI0NiwwLjA1KSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDIwIDAgMjAgMSAwIDEiIGZpbGw9InJnYmEoNTksMTMwLDI0NiwwLjA1KSIvPjwvc3ZnPg==')] pointer-events-none opacity-40" />
+            <div className="absolute -bottom-32 -right-32 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px] pointer-events-none" />
 
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center gap-3">
-                  <Calculator className="w-6 h-6 text-blue-400" />
-                  <h3 className="text-lg font-black text-white uppercase tracking-widest">{t('product.telemetryTitle')}</h3>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">{t('product.telemetryStatus')}</span>
-                </div>
+            <div className="relative z-10 flex flex-col items-center">
+              {/* Product Badge */}
+              <div className="flex items-center gap-2 mb-6 self-start">
+                <Package className="w-5 h-5 text-blue-400" />
+                <span className="text-xs font-bold text-slate-300 uppercase tracking-widest">{t('product.specsTitle')}</span>
               </div>
 
-              <div className="space-y-6">
-                {/* Length */}
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
-                    <span>{t('product.lengthLabel')}</span>
-                    <span className="text-blue-400">{getUrduNumber(length)} {language === 'ur' ? 'فٹ' : 'ft'}</span>
-                  </div>
-                  <input type="range" min="2" max="40" step="0.5" value={length}
-                    onChange={e => setLength(parseFloat(e.target.value))}
-                    className="w-full accent-blue-500 h-1 bg-slate-800 rounded-full cursor-pointer" />
-                </div>
-
-                {/* Width */}
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
-                    <span>{t('product.widthLabel')}</span>
-                    <span className="text-blue-400">{getUrduNumber(width)} {language === 'ur' ? 'فٹ' : 'ft'}</span>
-                  </div>
-                  <input type="range" min="2" max="20" step="0.5" value={width}
-                    onChange={e => setWidth(parseFloat(e.target.value))}
-                    className="w-full accent-blue-500 h-1 bg-slate-800 rounded-full cursor-pointer" />
-                </div>
-
-                {/* Depth */}
-                <div>
-                  <div className="flex justify-between text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
-                    <span>{t('product.depthLabel')}</span>
-                    <span className="text-blue-400">{getUrduNumber(depth)} {language === 'ur' ? 'فٹ' : 'ft'}</span>
-                  </div>
-                  <input type="range" min="1" max="10" step="0.5" value={depth}
-                    onChange={e => setDepth(parseFloat(e.target.value))}
-                    className="w-full accent-blue-500 h-1 bg-slate-800 rounded-full cursor-pointer" />
-                </div>
-
-                {/* Condition */}
-                <div className="pt-2">
-                  <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2">{t('product.threatLevelLabel')}</label>
-                  <select
-                    value={dirtLevel}
-                    onChange={e => setDirtLevel(e.target.value)}
-                    className="w-full px-4 py-3 rounded-xl border border-blue-500/20 bg-slate-800/50 text-white text-sm font-semibold focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
-                  >
-                    <option value="normal" className="bg-slate-900">{t('product.threatLevelOption')}</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Data Output */}
-              <div className="mt-8 p-1 rounded-2xl bg-gradient-to-r from-blue-500/20 to-cyan-400/20">
-                <div className="bg-[#0B0F19] rounded-xl p-4 grid grid-cols-3 gap-2 text-center divide-x divide-slate-800">
-                  <div>
-                    <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">{t('product.capacityLabel')}</span>
-                    <span className="text-lg font-black text-white">{getUrduNumber(volumeLiters)}<span className="text-xs text-slate-500 ml-0.5">{language === 'ur' ? 'لیٹر' : 'L'}</span></span>
-                  </div>
-                  <div>
-                    <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">{t('product.requiredLabel')}</span>
-                    <span className="text-lg font-black text-cyan-400">{getUrduNumber(cleanexNeeded)}<span className="text-xs text-cyan-700 ml-0.5">{language === 'ur' ? 'لیٹر' : 'L'}</span></span>
-                  </div>
-                  <div>
-                    <span className="block text-[9px] font-bold text-slate-500 uppercase tracking-widest mb-1">{t('product.unitsLabel')}</span>
-                    <span className="text-lg font-black text-blue-400">~{getUrduNumber(cansNeeded)}</span>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                onClick={handleApply}
-                className="mt-6 w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] cursor-pointer"
+              {/* Floating Canister Image */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center mb-6 relative group"
               >
-                <CheckCircle2 className="w-5 h-5" />
-                {t('product.buttonText')}
-              </button>
-            </div>
-          </motion.div>
+                {/* Glow ring */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl group-hover:scale-110 transition-transform duration-500" />
+                <img 
+                  src="/images/can.png" 
+                  alt="Cleanex 25L HDPE Canister" 
+                  className="h-full object-contain relative z-10 filter drop-shadow-[0_10px_20px_rgba(59,130,246,0.3)]"
+                />
+              </motion.div>
 
+              {/* Key Features from Brochure */}
+              <div className="w-full grid grid-cols-2 gap-3 mb-6">
+                <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400" />
+                  <span className="text-xs font-bold text-slate-300">{language === 'ur' ? 'پیڈ فرینڈلی فومنگ' : 'Foaming Action'}</span>
+                </div>
+                <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                  <span className="text-xs font-bold text-slate-300">{language === 'ur' ? 'پرندوں کی موجودگی میں محفوظ' : 'Safe Around Birds'}</span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              onClick={handleApply}
+              className="relative z-10 w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] cursor-pointer"
+            >
+              <CheckCircle2 className="w-5 h-5" />
+              {t('product.buttonText')}
+            </button>
+          </motion.div>
         </div>
       </div>
     </section>
