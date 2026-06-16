@@ -70,7 +70,17 @@ export const translations = {
       advisory2: "Over this 4-6 month dormant period, the scaling accumulated on the outer surface and inside the holes hardens like stone. Its grip on the pads becomes permanent and unbreakable.",
       advisory3: "Especially in areas where the water is salty, muddy, heavy, or has high TDS levels, this scaling renders the pads completely useless and unrecoverable.",
       warningPill: "Never shut down your cooling pads at the start of winter without washing them.",
-      quote: "\"An expense of a few thousand today saves a loss of hundreds of thousands tomorrow.\""
+      quote: "\"An expense of a few thousand today saves a loss of hundreds of thousands tomorrow.\"",
+      tabWinter: "Winter Shutdown",
+      tabGuidelines: "Important Guidelines",
+      tip1Title: "Flock-to-Flock Washing vs. Once a Year",
+      tip1Desc1: "It is widely believed that washing cooling pads once a year is sufficient, which is a critical operational mistake.",
+      tip1Desc2: "In regions with salty, muddy, heavy water, or high TDS, calcium scale clogs pads far quicker than fresh water. This scaling is highly dangerous as it rapidly hardens like stone.",
+      tip1Warning: "Washing pads after every flock is vital in high TDS areas. Waiting for visible scale build-up will ruin the pads.",
+      tip2Title: "The Danger of Invisible Clogging",
+      tip2Desc1: "Farmers typically do not consider cooling pads dirty until scaling is visible on the outer surface, even if a year passes.",
+      tip2Desc2: "Scaling is a slow, imperceptible process that accumulates deep inside the pad's microscopic pores. Pads may look clean on the outside while their internal airflow channels are already clogging.",
+      tip2Warning: "Waiting for the outer surface to show dirt is a leading cause of premature pad destruction."
     },
     product: {
       tag: "System Analytics",
@@ -267,7 +277,17 @@ export const translations = {
       advisory2: "اس ۴ سے ۶ ماہ کی بندش کے دوران، پیڈز کی بیرونی سطح اور سوراخوں کے اندر جمنے والا کیلشیم پتھر کی طرح سخت ہو جاتا ہے۔ پیڈز پر اس کی گرفت مستقل اور ناقابلِ علاج ہو جاتی ہے۔",
       advisory3: "خاص طور پر ان علاقوں میں جہاں پانی نمکین، مٹی والا یا بھاری ہے، یہ کیلشیم پیڈز کو مکمل طور پر بیکار کر دیتا ہے جسے بعد میں صاف کرنا ناممکن ہے۔",
       warningPill: "سردیوں کے شروع میں اپنے کولنگ پیڈز کو دھوئے بغیر کبھی بھی بند نہ کریں۔",
-      quote: "\"آج کا چند ہزار کا خرچ کل کے لاکھوں کے نقصان سے بچاتا ہے۔\""
+      quote: "\"آج کا چند ہزار کا خرچ کل کے لاکھوں کے نقصان سے بچاتا ہے۔\"",
+      tabWinter: "سردیوں کی دیکھ بھال",
+      tabGuidelines: "چند ضروری باتیں",
+      tip1Title: "ہر فلاک کے بعد صفائی بمقابلہ سالانہ واشنگ",
+      tip1Desc1: "عموماً یہ بات دیکھنے میں آئی ہے کہ پیڈز کی واشنگ سال میں صرف ایک دفعہ کر دینا ہی کافی سمجھا جاتا ہے جو کہ سراسر غلط ہے۔",
+      tip1Desc2: "جن علاقوں کا پانی نمکین، گدلا، بھاری یا ٹی ڈی ایس (TDS) زیادہ ہے، وہاں سکیلنگ میٹھے پانی کی نسبت پیڈز کو زیادہ تیزی سے چوک اور گندا کرتی ہے۔ یہ سکیلنگ بہت جلد پتھر کی طرح سخت ہو جاتی ہے۔",
+      tip1Warning: "ایسی صورت میں ہر فلاک کے بعد پیڈز کی واشنگ انتہائی ضروری ہے۔ سکیلنگ جمنے کا انتظار پیڈز کو برباد کر دیتا ہے۔",
+      tip2Title: "غیر محسوس اور پوشیدہ بلاکیج کا خطرہ",
+      tip2Desc1: "عام طور پر فارمر حضرات کولنگ پیڈز کو اس وقت تک بند یا گندا نہیں سمجھتے جب تک سکیلنگ بیرونی سطح پر نظر نہ آئے۔ چاہے اس کے لیے سال ہی کیوں نہ گزر جائے۔",
+      tip2Desc2: "سکیلنگ کا عمل کوئی ایک دن کا نہیں ہوتا، بلکہ یہ انتہائی خاموشی اور آہستگی سے پیڈز کے گہرے سوراخوں کے اندر جمع ہوتی رہتی ہے۔ ظاہری طور پر پیڈز صاف نظر آتے ہیں مگر اندرونی بلاکیج شروع ہو چکی ہوتی ہے۔",
+      tip2Warning: "پیڈز کی بیرونی سطح گندی ہونے کا انتظار کرنا پیڈز کو ضائع کرنے میں سب سے اہم کردار ادا کرتا ہے۔"
     },
     product: {
       tag: "سسٹم کا تجزیہ",
