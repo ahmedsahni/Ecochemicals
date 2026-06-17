@@ -13,8 +13,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-blue-500 flex items-center justify-center text-white border border-blue-400/30">
-                <Droplet className="w-5 h-5 fill-current" />
+              <div className="w-10 h-10 rounded-xl bg-white border border-slate-200/30 flex items-center justify-center p-1 shadow-md">
+                <img src="/images/logo.png" alt="Eco Chemicals Logo" className="w-full h-full object-contain" />
               </div>
               <div>
                 <span className="block text-xl font-black text-white tracking-tight">

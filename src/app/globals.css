@@ -8,9 +8,9 @@
   --color-brand-blue:    #0E4A7D;
   --color-brand-blue-glow: #0082C8;
   --color-brand-orange:  #6EA73E;
-  --color-brand-dark:    #0B0F19; /* Deep Slate/Black */
-  --color-brand-surface: #111827; /* Slate 900 */
-  --color-brand-panel:   #1F2937; /* Slate 800 */
+  --color-brand-dark:    #020C17; /* Deep Navy Brand Dark */
+  --color-brand-surface: #041424; /* Deep Navy Brand Surface */
+  --color-brand-panel:   #071C33; /* Deep Navy Brand Panel */
 
   /* Global Tailwind Color Overrides to align with logo */
   --color-blue-300: #339BCE;
@@ -36,6 +36,18 @@
   --color-green-400: #6EA73E;
   --color-green-500: #22782A;
   --color-green-600: #1A6021;
+
+  --color-slate-50:  #F4F8FE;
+  --color-slate-100: #E6F1FD;
+  --color-slate-200: #D0E4FA;
+  --color-slate-300: #A8CEF0;
+  --color-slate-400: #7CB3E5;
+  --color-slate-500: #296BA8;
+  --color-slate-600: #194C7D;
+  --color-slate-700: #0E345C;
+  --color-slate-800: #08213B;
+  --color-slate-900: #031224;
+  --color-slate-950: #01060B;
 
   --animate-float:      float 7s ease-in-out infinite;
   --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
@@ -67,7 +79,7 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background-color: #0B0F19; /* Deep Slate Base */
+  background-color: #020C17; /* Deep Navy Brand Base */
   color: #F8FAFC; /* Slate 50 */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -103,7 +115,7 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0B0F19; }
+::-webkit-scrollbar-track { background: #020C17; }
 ::-webkit-scrollbar-thumb { background: #0E4A7D; border-radius: 99px; }
 
 /* Urdu RTL Styles */

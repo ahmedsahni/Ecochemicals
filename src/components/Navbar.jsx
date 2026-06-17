@@ -36,8 +36,8 @@ export default function Navbar() {
           
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-orange-400 to-blue-500 flex items-center justify-center text-white border border-blue-400/30">
-              <Droplet className="w-6 h-6 fill-current drop-shadow-md" />
+            <div className="relative w-11 h-11 rounded-xl bg-white border border-slate-200/30 flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform duration-300">
+              <img src="/images/logo.png" alt="Eco Chemicals Logo" className="w-full h-full object-contain" />
             </div>
             <div className="relative">
               <span className="block text-xl font-black text-white tracking-tight">
