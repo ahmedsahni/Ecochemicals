@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <a href="#home" className="flex items-center gap-3 mb-6 group">
-              <div className="relative w-11 h-11 rounded-xl bg-white border border-slate-200/30 flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-11 h-11 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <img src="/images/logo_icon.png" alt="Eco Chemicals Logo" className="w-full h-full object-contain" />
               </div>
               <div className="relative">

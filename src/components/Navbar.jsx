@@ -36,7 +36,7 @@ export default function Navbar() {
           
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 rounded-xl bg-white border border-slate-200/30 flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform duration-300">
+            <div className="relative w-12 h-12 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
               <img src="/images/logo_icon.png" alt="Eco Chemicals Logo" className="w-full h-full object-contain" />
             </div>
             <div className="relative">
