@@ -46,7 +46,7 @@ export default function LeadForm({ prefilledMessage }) {
     } catch (error) {
       alert(language === 'ur' 
         ? "سسٹم کی خرابی: ڈیٹا منتقل نہیں ہو سکا۔ براہ کرم واٹس ایپ پر رابطہ کریں۔" 
-        : "System Error: Could not transmit data. Please contact via WhatsApp.");
+        : "Something went wrong. Please try again or contact us on WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }

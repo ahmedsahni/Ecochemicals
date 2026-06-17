@@ -53,6 +53,7 @@ export default function Contact() {
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.hqLabel')}</p>
                   <p className="text-lg font-extrabold text-white">ECO Chemicals</p>
+                  <p className="text-sm font-semibold text-slate-400 mt-0.5">{t('contact.regionVal')}</p>
                 </div>
               </div>
 
