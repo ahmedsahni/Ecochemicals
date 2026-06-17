@@ -22,7 +22,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials" className="bg-[#111827] py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+    <section id="testimonials" className="bg-slate-100 py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
       <div className="max-w-7xl mx-auto">
         
         <div className="text-center mb-16">
@@ -33,14 +33,14 @@ export default function Testimonials() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-4"
           >
             <MessageCircle className="w-4 h-4 text-blue-400" />
-            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase">{t('testimonials.tag')}</span>
+            <span className="text-xs font-bold text-blue-600 tracking-widest uppercase">{t('testimonials.tag')}</span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-white leading-tight"
+            className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight"
           >
             {t('testimonials.title')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -65,10 +65,10 @@ export default function Testimonials() {
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-slate-300 text-sm leading-relaxed mb-8 font-medium">"{t.quote}"</p>
+                <p className="text-slate-600 text-sm leading-relaxed mb-8 font-medium">"{t.quote}"</p>
               </div>
               <div>
-                <h4 className="font-bold text-white tracking-wide">{t.name}</h4>
+                <h4 className="font-bold text-slate-900 tracking-wide">{t.name}</h4>
                 <p className="text-xs font-bold text-blue-400 mt-1">{t.role}</p>
               </div>
             </motion.div>

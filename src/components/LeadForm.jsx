@@ -68,9 +68,9 @@ export default function LeadForm({ prefilledMessage }) {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] overflow-hidden">
+    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
         
@@ -83,15 +83,15 @@ export default function LeadForm({ prefilledMessage }) {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 mb-6">
             <Send className="w-4 h-4 text-blue-400" />
-            <span className="text-xs font-bold text-blue-300 tracking-widest uppercase">{t('leadForm.tag')}</span>
+            <span className="text-xs font-bold text-blue-600 tracking-widest uppercase">{t('leadForm.tag')}</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-black text-white leading-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 leading-tight mb-6">
             {t('leadForm.title')} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
               {t('leadForm.titleGlow')}
             </span>
           </h2>
-          <p className="text-slate-400 leading-relaxed font-medium mb-10 max-w-md">
+          <p className="text-slate-500 leading-relaxed font-medium mb-10 max-w-md">
             {t('leadForm.desc')}
           </p>
 
@@ -102,7 +102,7 @@ export default function LeadForm({ prefilledMessage }) {
               </div>
               <div className={language === 'ur' ? 'text-right' : 'text-left'}>
                 <p className="text-xs font-bold text-[#25D366] uppercase tracking-widest mb-1">{t('leadForm.waPriority')}</p>
-                <a href="https://wa.me/923214858418" target="_blank" rel="noreferrer" className="text-xl font-bold text-white hover:text-[#25D366] transition-colors">
+                <a href="https://wa.me/923214858418" target="_blank" rel="noreferrer" className="text-xl font-bold text-slate-900 hover:text-[#25D366] transition-colors">
                   +92 321 4858418
                 </a>
               </div>
@@ -114,7 +114,7 @@ export default function LeadForm({ prefilledMessage }) {
               </div>
               <div className={language === 'ur' ? 'text-right' : 'text-left'}>
                 <p className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">{t('leadForm.hqLabel')}</p>
-                <p className="text-xl font-bold text-white">{language === 'ur' ? '۰۳۲۲ ۶۰۵۷۸۸۵' : '0322 6057885'}</p>
+                <p className="text-xl font-bold text-slate-900">{language === 'ur' ? '۰۳۲۲ ۶۰۵۷۸۸۵' : '0322 6057885'}</p>
               </div>
             </div>
           </div>
@@ -132,27 +132,27 @@ export default function LeadForm({ prefilledMessage }) {
               <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6 border border-emerald-500/50 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
                 <CheckCircle2 className="w-10 h-10 text-emerald-400" />
               </div>
-              <h3 className="text-2xl font-black text-white mb-2">{t('leadForm.successTitle')}</h3>
-              <p className="text-slate-400 font-medium">{t('leadForm.successDesc')}</p>
+              <h3 className="text-2xl font-black text-slate-900 mb-2">{t('leadForm.successTitle')}</h3>
+              <p className="text-slate-500 font-medium">{t('leadForm.successDesc')}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelName')}</label>
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">{t('leadForm.labelName')}</label>
                   <div className="relative">
-                    <User className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
-                    <input {...register('name')} placeholder={t('leadForm.placeholderName')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
+                    <User className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400`} />
+                    <input {...register('name')} placeholder={t('leadForm.placeholderName')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-slate-100 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.name && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.name.message}</p>}
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelCompany')}</label>
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">{t('leadForm.labelCompany')}</label>
                   <div className="relative">
-                    <Building2 className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
-                    <input {...register('company')} placeholder={t('leadForm.placeholderCompany')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
+                    <Building2 className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400`} />
+                    <input {...register('company')} placeholder={t('leadForm.placeholderCompany')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-slate-100 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.company && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.company.message}</p>}
                 </div>
@@ -160,31 +160,31 @@ export default function LeadForm({ prefilledMessage }) {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelPhone')}</label>
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">{t('leadForm.labelPhone')}</label>
                   <div className="relative">
-                    <PhoneCall className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
-                    <input {...register('phone')} placeholder={t('leadForm.placeholderPhone')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
+                    <PhoneCall className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400`} />
+                    <input {...register('phone')} placeholder={t('leadForm.placeholderPhone')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-slate-100 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.phone && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.phone.message}</p>}
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelLocation')}</label>
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">{t('leadForm.labelLocation')}</label>
                   <div className="relative">
-                    <MapPin className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500`} />
-                    <input {...register('city')} placeholder={t('leadForm.placeholderCity')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
+                    <MapPin className={`absolute ${language === 'ur' ? 'right-4' : 'left-4'} top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400`} />
+                    <input {...register('city')} placeholder={t('leadForm.placeholderCity')} className={`w-full ${language === 'ur' ? 'pr-12 pl-4' : 'pl-12 pr-4'} py-3.5 bg-slate-100 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium`} />
                   </div>
                   {errors.city && <p className="text-orange-400 text-xs ml-1 font-bold">{errors.city.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">{t('leadForm.labelMsg')}</label>
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest ml-1">{t('leadForm.labelMsg')}</label>
                 <textarea 
                   {...register('message')} 
                   placeholder={t('leadForm.placeholderMsg')} 
                   rows={4}
-                  className="w-full px-4 py-3.5 bg-[#0B0F19]/50 border border-slate-700 rounded-xl text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium resize-none" 
+                  className="w-full px-4 py-3.5 bg-slate-100 border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all font-medium resize-none" 
                 />
               </div>
 

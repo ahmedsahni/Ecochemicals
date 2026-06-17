@@ -25,7 +25,7 @@ export default function Contact() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="contact-info" className="bg-[#0B0F19] py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-800">
+    <section id="contact-info" className="bg-white py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-200">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
@@ -43,7 +43,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-white"
+            className="text-4xl sm:text-5xl font-black text-slate-900"
           >
             {t('contact.title')}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
@@ -69,8 +69,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.hqLabel')}</p>
-                  <p className="text-lg font-extrabold text-white">ECO Chemicals</p>
-                  <p className="text-sm font-semibold text-slate-400 mt-0.5">
+                  <p className="text-lg font-extrabold text-slate-900">ECO Chemicals</p>
+                  <p className="text-sm font-semibold text-slate-500 mt-0.5">
                     {language === 'ur' ? 'مینگورہ، سوات' : 'Mingora, Swat'}
                   </p>
                 </div>
@@ -83,7 +83,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.logisticsLabel')}</p>
-                  <p className="text-sm font-semibold text-slate-300">
+                  <p className="text-sm font-semibold text-slate-600">
                     {t('contact.logisticsVal')}
                   </p>
                 </div>
@@ -96,7 +96,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.hoursLabel')}</p>
-                  <p className="text-sm font-semibold text-slate-300">{t('contact.hoursVal')}</p>
+                  <p className="text-sm font-semibold text-slate-600">{t('contact.hoursVal')}</p>
                 </div>
               </div>
             </div>
@@ -111,14 +111,14 @@ export default function Contact() {
             className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {/* Phone 1 */}
-            <div className="glass-panel border border-slate-700/50 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-blue-500/50 transition-colors">
+            <div className="glass-panel border border-slate-200 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-blue-500/50 transition-colors">
               <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
                 <div className="inline-flex p-3 rounded-2xl bg-blue-500/20 border border-blue-500/30 text-blue-400 mb-4 shadow-[0_0_15px_rgba(37,99,235,0.3)]">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white">{t('contact.primaryTitle')}</h3>
-                <p className="text-xs text-slate-400 mt-1">{t('contact.primaryDesc')}</p>
+                <h3 className="text-lg font-bold text-slate-900">{t('contact.primaryTitle')}</h3>
+                <p className="text-xs text-slate-500 mt-1">{t('contact.primaryDesc')}</p>
               </div>
               <a
                 href="tel:+923226057885"
@@ -129,14 +129,14 @@ export default function Contact() {
             </div>
 
             {/* Phone 2 */}
-            <div className="glass-panel border border-slate-700/50 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
+            <div className="glass-panel border border-slate-200 rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden group hover:border-cyan-500/50 transition-colors">
               <div className="absolute inset-0 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
                 <div className="inline-flex p-3 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 mb-4 shadow-[0_0_15px_rgba(34,211,238,0.3)]">
                   <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-white">{t('contact.secondaryTitle')}</h3>
-                <p className="text-xs text-slate-400 mt-1">{t('contact.secondaryDesc')}</p>
+                <h3 className="text-lg font-bold text-slate-900">{t('contact.secondaryTitle')}</h3>
+                <p className="text-xs text-slate-500 mt-1">{t('contact.secondaryDesc')}</p>
               </div>
               <a
                 href="tel:+923214858418"
@@ -154,8 +154,8 @@ export default function Contact() {
                   <WhatsAppIcon className="w-8 h-8 text-[#25D366]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-extrabold text-white">{t('contact.chatTitle')}</h3>
-                  <p className="text-xs text-slate-400 font-medium mt-1">{t('contact.chatDesc')}</p>
+                  <h3 className="text-lg font-extrabold text-slate-900">{t('contact.chatTitle')}</h3>
+                  <p className="text-xs text-slate-500 font-medium mt-1">{t('contact.chatDesc')}</p>
                 </div>
               </div>
               <a
