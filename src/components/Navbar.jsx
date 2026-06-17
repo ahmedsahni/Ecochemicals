@@ -36,12 +36,16 @@ export default function Navbar() {
           
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group">
-            <img 
-              src="/images/logo.png" 
-              alt="Eco Chemicals Logo" 
-              className="h-12 w-auto object-contain bg-white rounded-xl p-1.5 border border-slate-200/30 shadow-md group-hover:scale-105 transition-transform duration-300" 
-            />
-            <span className="sr-only">Eco Chemicals - Poultry Solutions</span>
+            <div className="relative w-12 h-12 rounded-xl bg-white border border-slate-200/30 flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform duration-300">
+              <img src="/images/logo_icon.png" alt="Eco Chemicals Logo" className="w-full h-full object-contain" />
+            </div>
+            <div className="relative">
+              <span className="block text-xl font-black text-white tracking-tight">
+                <span className="text-orange-400">{language === 'ur' ? 'ایکو ' : 'ECO '}</span>
+                <span className="text-blue-400">{language === 'ur' ? 'کیمیکلز' : 'Chemicals'}</span>
+              </span>
+              <span className="block text-[10px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">{t('navbar.logoSub')}</span>
+            </div>
           </a>
 
           {/* Desktop Nav */}

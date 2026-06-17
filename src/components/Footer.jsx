@@ -12,13 +12,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
-            <a href="#home" className="flex items-center gap-3 mb-6">
-              <img 
-                src="/images/logo.png" 
-                alt="Eco Chemicals Logo" 
-                className="h-12 w-auto object-contain bg-white rounded-xl p-1.5 border border-slate-200/30 shadow-md" 
-              />
-              <span className="sr-only">Eco Chemicals - Poultry Solutions</span>
+            <a href="#home" className="flex items-center gap-3 mb-6 group">
+              <div className="relative w-11 h-11 rounded-xl bg-white border border-slate-200/30 flex items-center justify-center p-1 shadow-md group-hover:scale-105 transition-transform duration-300">
+                <img src="/images/logo_icon.png" alt="Eco Chemicals Logo" className="w-full h-full object-contain" />
+              </div>
+              <div className="relative">
+                <span className="block text-lg font-black text-white tracking-tight">
+                  <span className="text-orange-400">{language === 'ur' ? 'ایکو ' : 'ECO '}</span>
+                  <span className="text-blue-400">{language === 'ur' ? 'کیمیکلز' : 'Chemicals'}</span>
+                </span>
+                <span className="block text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">{t('navbar.logoSub')}</span>
+              </div>
             </a>
             <p className="text-slate-400 font-medium text-sm leading-relaxed max-w-sm mb-6">
               {t('footer.desc')}
