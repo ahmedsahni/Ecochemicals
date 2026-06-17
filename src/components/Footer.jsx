@@ -13,12 +13,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-2">
             <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white border border-blue-400/30">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-blue-500 flex items-center justify-center text-white border border-blue-400/30">
                 <Droplet className="w-5 h-5 fill-current" />
               </div>
               <div>
                 <span className="block text-xl font-black text-white tracking-tight">
-                  {language === 'ur' ? 'ایکو ' : 'ECO '}
+                  <span className="text-orange-400">{language === 'ur' ? 'ایکو ' : 'ECO '}</span>
                   <span className="text-blue-400">{language === 'ur' ? 'کیمیکلز' : 'Chemicals'}</span>
                 </span>
                 <span className="block text-[9px] font-bold text-slate-400 tracking-[0.2em] uppercase -mt-1">{t('navbar.logoSub')}</span>

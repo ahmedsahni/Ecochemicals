@@ -5,17 +5,41 @@
 @theme {
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --color-brand-blue:    #1D4ED8;
-  --color-brand-blue-glow: #3B82F6;
-  --color-brand-orange:  #F97316;
+  --color-brand-blue:    #0E4A7D;
+  --color-brand-blue-glow: #0082C8;
+  --color-brand-orange:  #6EA73E;
   --color-brand-dark:    #0B0F19; /* Deep Slate/Black */
   --color-brand-surface: #111827; /* Slate 900 */
   --color-brand-panel:   #1F2937; /* Slate 800 */
 
+  /* Global Tailwind Color Overrides to align with logo */
+  --color-blue-300: #339BCE;
+  --color-blue-400: #0082C8;
+  --color-blue-500: #0E4A7D;
+  --color-blue-600: #0A3B66;
+  --color-blue-700: #072C4C;
+
+  --color-cyan-300: #4FC3F7;
+  --color-cyan-400: #29B6F6;
+  --color-cyan-500: #0082C8;
+
+  --color-orange-300: #87BF54;
+  --color-orange-400: #6EA73E;
+  --color-orange-500: #22782A;
+  --color-orange-600: #1A6021;
+  --color-orange-700: #134718;
+
+  --color-emerald-400: #6EA73E;
+  --color-emerald-500: #22782A;
+  --color-emerald-600: #1A6021;
+
+  --color-green-400: #6EA73E;
+  --color-green-500: #22782A;
+  --color-green-600: #1A6021;
+
   --animate-float:      float 7s ease-in-out infinite;
   --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
   --animate-marquee:    marquee 30s linear infinite;
-
 }
 
 @keyframes float {
@@ -55,13 +79,13 @@ body {
   background: rgba(31, 41, 55, 0.4); /* Slate 800 with opacity */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(59, 130, 246, 0.2); /* Blue border */
+  border: 1px solid rgba(0, 130, 200, 0.2); /* Logo bright blue border */
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #60A5FA, #3B82F6);
+  background: linear-gradient(135deg, #6EA73E, #0082C8); /* Logo green to bright blue */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -69,7 +93,7 @@ body {
 
 /* Glow Text */
 .glow-text {
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
+  text-shadow: 0 0 20px rgba(0, 130, 200, 0.6);
 }
 
 /* Floating animation */
@@ -80,7 +104,7 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0B0F19; }
-::-webkit-scrollbar-thumb { background: #1D4ED8; border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: #0E4A7D; border-radius: 99px; }
 
 /* Urdu RTL Styles */
 [dir="rtl"] {
