@@ -32,7 +32,7 @@ export default function Hero() {
       <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0 bg-[#020D1A]">
         {/* Farm Background Image */}
         <div 
-          className="absolute inset-0 bg-[url('/images/farm_bg.png')] bg-cover bg-center opacity-[0.20] mix-blend-luminosity pointer-events-none" 
+          className="absolute inset-0 bg-[url('/images/farm_bg.png')] bg-cover bg-center opacity-[0.40] mix-blend-luminosity pointer-events-none" 
         />
         {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDQwIDAgNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48cG9seWdvbiBwb2ludHM9IjAgMCA0MCAwIDQwIDEgMCAxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMEQpIi8+PC9zdmc+')] opacity-40" />
