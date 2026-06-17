@@ -8,9 +8,9 @@
   --color-brand-blue:    #0E4A7D;
   --color-brand-blue-glow: #0082C8;
   --color-brand-orange:  #6EA73E;
-  --color-brand-dark:    #0F172A;
-  --color-brand-surface: #F8FAFC;
-  --color-brand-panel:   #FFFFFF;
+  --color-brand-dark:    #020C17; /* Deep Navy Brand Dark */
+  --color-brand-surface: #041424; /* Deep Navy Brand Surface */
+  --color-brand-panel:   #071C33; /* Deep Navy Brand Panel */
 
   /* Global Tailwind Color Overrides to align with logo */
   --color-blue-300: #339BCE;
@@ -37,18 +37,17 @@
   --color-green-500: #22782A;
   --color-green-600: #1A6021;
 
-  /* Slate overrides — neutral greys for light theme */
-  --color-slate-50:  #F8FAFC;
-  --color-slate-100: #F1F5F9;
-  --color-slate-200: #E2E8F0;
-  --color-slate-300: #CBD5E1;
-  --color-slate-400: #94A3B8;
-  --color-slate-500: #64748B;
-  --color-slate-600: #475569;
-  --color-slate-700: #334155;
-  --color-slate-800: #1E293B;
-  --color-slate-900: #0F172A;
-  --color-slate-950: #020617;
+  --color-slate-50:  #F4F8FE;
+  --color-slate-100: #E6F1FD;
+  --color-slate-200: #D0E4FA;
+  --color-slate-300: #A8CEF0;
+  --color-slate-400: #7CB3E5;
+  --color-slate-500: #296BA8;
+  --color-slate-600: #194C7D;
+  --color-slate-700: #0E345C;
+  --color-slate-800: #08213B;
+  --color-slate-900: #031224;
+  --color-slate-950: #01060B;
 
   --animate-float:      float 7s ease-in-out infinite;
   --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
@@ -60,8 +59,8 @@
   50%       { transform: translateY(-16px); }
 }
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.3; }
-  50%       { opacity: 0.6; }
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
 }
 @keyframes marquee {
   0%   { transform: translateX(0); }
@@ -80,25 +79,25 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-  background-color: #FFFFFF;
-  color: #0F172A;
+  background-color: #020C17; /* Deep Navy Brand Base */
+  color: #F8FAFC; /* Slate 50 */
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Light glass / card effect */
+/* Custom dark glass effect */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(31, 41, 55, 0.4); /* Slate 800 with opacity */
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(0, 130, 200, 0.15);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 130, 200, 0.2); /* Logo bright blue border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #6EA73E, #0082C8);
+  background: linear-gradient(135deg, #6EA73E, #0082C8); /* Logo green to bright blue */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -106,7 +105,7 @@ body {
 
 /* Glow Text */
 .glow-text {
-  text-shadow: 0 0 20px rgba(0, 130, 200, 0.25);
+  text-shadow: 0 0 20px rgba(0, 130, 200, 0.6);
 }
 
 /* Floating animation */
@@ -116,8 +115,8 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #F1F5F9; }
-::-webkit-scrollbar-thumb { background: #0082C8; border-radius: 99px; }
+::-webkit-scrollbar-track { background: #020C17; }
+::-webkit-scrollbar-thumb { background: #0E4A7D; border-radius: 99px; }
 
 /* Urdu RTL Styles */
 [dir="rtl"] {
@@ -144,3 +143,4 @@ body {
   font-family: 'Noto Nastaliq Urdu', 'Plus Jakarta Sans', system-ui, sans-serif !important;
   line-height: 1.5;
 }
+

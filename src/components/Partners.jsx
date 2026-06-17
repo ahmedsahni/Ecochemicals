@@ -13,17 +13,17 @@ export default function Partners() {
   const items = [...partners, ...partners];
 
   return (
-    <section className="bg-slate-100 py-14 overflow-hidden">
+    <section className="bg-slate-900 py-14 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-        <p className="text-center text-xs font-bold text-slate-400 uppercase tracking-[0.25em]">
+        <p className="text-center text-xs font-bold text-slate-500 uppercase tracking-[0.25em]">
           {t('partners.title')}
         </p>
       </div>
 
       <div className="relative w-full">
         {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-100 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-100 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-900 to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-900 to-transparent z-10 pointer-events-none" />
 
         {/* Marquee track */}
         <div className="flex" style={{ animation: 'marquee 30s linear infinite' }}>
@@ -32,7 +32,7 @@ export default function Partners() {
               key={i}
               className="flex-shrink-0 mx-10 flex items-center"
             >
-              <span className="text-2xl font-black text-slate-600 hover:text-slate-900 transition-colors duration-300 whitespace-nowrap cursor-default">
+              <span className="text-2xl font-black text-slate-400 hover:text-white transition-colors duration-300 whitespace-nowrap cursor-default">
                 {name}
               </span>
             </div>

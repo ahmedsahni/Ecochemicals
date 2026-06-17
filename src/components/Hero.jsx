@@ -28,17 +28,19 @@ export default function Hero() {
   return (
     <section ref={container} id="home" className="relative min-h-[100vh] flex items-center pt-24 overflow-hidden">
 
-      {/* Light Background */}
-      <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0 bg-slate-50">
-        {/* Farm Background Image — reduced opacity for light bg */}
-        <div
-          className="absolute inset-0 bg-[url('/images/farm_bg.png')] bg-cover bg-center opacity-[0.10] mix-blend-multiply pointer-events-none"
+      {/* High-Tech Background */}
+      <motion.div style={{ y: yBackground }} className="absolute inset-0 z-0 bg-[#020D1A]">
+        {/* Farm Background Image */}
+        <div 
+          className="absolute inset-0 bg-[url('/images/farm_bg.png')] bg-cover bg-center opacity-[0.20] mix-blend-luminosity pointer-events-none" 
         />
         {/* Subtle grid pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDQwIDAgNDAiIGZpbGw9InJnYmEoMCwwLDAsMC4wMykiLz48cG9seWdvbiBwb2ludHM9IjAgMCA0MCAwIDQwIDEgMCAxIiBmaWxsPSJyZ2JhKDAsMCwwLDAuMDMpIi8+PC9zdmc+')] opacity-40" />
-        {/* Soft brand-colored radial glows */}
-        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-emerald-100/80 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-100/80 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iMCAwIDEgMCAxIDQwIDAgNDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48cG9seWdvbiBwb2ludHM9IjAgMCA0MCAwIDQwIDEgMCAxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMEQpIi8+PC9zdmc+')] opacity-40" />
+        {/* Brand green and navy radial glow */}
+        <div className="absolute top-1/4 -left-1/4 w-[800px] h-[800px] bg-emerald-900/30 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-900/30 rounded-full blur-[120px]" />
+        {/* Overlay gradient to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020D1A] via-[#020D1A]/85 to-transparent" />
       </motion.div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid lg:grid-cols-2 gap-16 items-center w-full">
@@ -46,28 +48,28 @@ export default function Hero() {
         {/* ─── LEFT: Typography ─── */}
         <motion.div style={{ opacity: opacityText }} className={language === 'ur' ? 'text-center lg:text-right' : 'text-center lg:text-left'}>
           <motion.div {...fadeUp(0)}>
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-emerald-500/30 shadow-sm mb-8">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border-emerald-500/30 mb-8">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-bold text-emerald-700 tracking-[0.2em] uppercase">{t('hero.badge')}</span>
+              <span className="text-xs font-bold text-emerald-200 tracking-[0.2em] uppercase">{t('hero.badge')}</span>
             </div>
           </motion.div>
 
-          <TextReveal
-            text={t('hero.title')}
-            className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.2] tracking-tight mb-6"
+          <TextReveal 
+            text={t('hero.title')} 
+            className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[1.2] tracking-tight mb-6" 
           />
 
-          <motion.p {...fadeUp(0.2)} className="text-lg text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10 font-medium">
+          <motion.p {...fadeUp(0.2)} className="text-lg text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10 font-medium">
             {language === 'ur' ? (
               <>
-                سائنسی طور پر تیار کردہ جو کیلشیم سکیل کو جمنے سے روکتا ہے، <span className="text-slate-700 font-bold border-b border-emerald-500/50">ایسپرجیلس فیومیگیٹس</span> جراثیم کا خاتمہ کرتا ہے اور پیڈز کو صاف رکھتا ہے۔ پاکستان کے چوٹی کے پولٹری فارمز کا واحد قابلِ اعتماد اور کاغذی پیڈز کے لیے محفوظ کیمیکل جو پیڈز کو دھونے کے لیے استعمال ہوتا ہے۔
+                سائنسی طور پر تیار کردہ جو کیلشیم سکیل کو جمنے سے روکتا ہے، <span className="text-slate-200 font-bold border-b border-emerald-500/50">ایسپرجیلس فیومیگیٹس</span> جراثیم کا خاتمہ کرتا ہے اور پیڈز کو صاف رکھتا ہے۔ پاکستان کے چوٹی کے پولٹری فارمز کا واحد قابلِ اعتماد اور کاغذی پیڈز کے لیے محفوظ کیمیکل جو پیڈز کو دھونے کے لیے استعمال ہوتا ہے۔
               </>
             ) : (
               <>
-                Scientifically formulated to prevent calcium scaling, eradicate <span className="text-slate-700 font-bold border-b border-emerald-500/50">Aspergillus fumigatus</span>, and sanitize cooling pads. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations for preventative pad washing.
+                Scientifically formulated to prevent calcium scaling, eradicate <span className="text-slate-200 font-bold border-b border-emerald-500/50">Aspergillus fumigatus</span>, and sanitize cooling pads. The only cellulose-safe chemical trusted by Pakistan's top poultry integrations for preventative pad washing.
               </>
             )}
           </motion.p>
@@ -80,39 +82,39 @@ export default function Hero() {
                 {t('hero.calcDosage')} <ArrowRight className={`w-5 h-5 ${language === 'ur' ? 'rotate-180' : ''}`} />
               </span>
             </a>
-
-            <a href="#why-us" className="inline-flex items-center justify-center px-8 py-4 bg-white border border-slate-300 hover:border-slate-400 hover:bg-slate-50 text-slate-700 font-bold text-base rounded-xl transition-all shadow-sm">
+            
+            <a href="#why-us" className="inline-flex items-center justify-center px-8 py-4 glass-panel hover:bg-white/5 text-slate-200 font-bold text-base rounded-xl transition-all">
               {t('hero.viewLabSpecs')}
             </a>
           </motion.div>
 
-          {/* Specs mini-row */}
-          <motion.div {...fadeUp(0.4)} className="mt-12 pt-8 border-t border-slate-200 flex flex-wrap items-center gap-8 justify-center lg:justify-start">
+          {/* Tech specs mini-row */}
+          <motion.div {...fadeUp(0.4)} className="mt-12 pt-8 border-t border-slate-800/80 flex flex-wrap items-center gap-8 justify-center lg:justify-start">
             <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2 text-emerald-600">
+              <div className="flex items-center gap-2 text-emerald-400">
                 <ShieldCheck className="w-4 h-4" />
                 <span className="text-[10px] font-black uppercase tracking-widest">{t('hero.material')}</span>
               </div>
-              <span className="text-sm font-bold text-slate-600">{t('hero.celluloseSafe')}</span>
+              <span className="text-sm font-bold text-slate-300">{t('hero.celluloseSafe')}</span>
             </div>
             <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2 text-blue-500">
+              <div className="flex items-center gap-2 text-blue-400">
                 <Crosshair className="w-4 h-4" />
                 <span className="text-[10px] font-black uppercase tracking-widest">{t('hero.efficacy')}</span>
               </div>
-              <span className="text-sm font-bold text-slate-600">{t('hero.fungiKill')}</span>
+              <span className="text-sm font-bold text-slate-300">{t('hero.fungiKill')}</span>
             </div>
             <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2 text-cyan-600">
+              <div className="flex items-center gap-2 text-cyan-400">
                 <Zap className="w-4 h-4" />
                 <span className="text-[10px] font-black uppercase tracking-widest">{t('hero.actionTime')}</span>
               </div>
-              <span className="text-sm font-bold text-slate-600">{t('hero.fastActing')}</span>
+              <span className="text-sm font-bold text-slate-300">{t('hero.fastActing')}</span>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* ─── RIGHT: Can Showcase ─── */}
+        {/* ─── RIGHT: High-Tech Can Showcase ─── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -120,40 +122,40 @@ export default function Hero() {
           style={{ y: yImage, scale: scaleImage }}
           className="relative flex justify-center items-center py-10"
         >
-          {/* Soft glow backdrop */}
-          <div className="absolute w-[280px] sm:w-[350px] h-[350px] bg-emerald-200/60 rounded-full blur-[80px] animate-pulse-glow" />
-          <div className="absolute w-[200px] h-[200px] bg-blue-200/60 rounded-full blur-[60px]" />
+          {/* Intense neon backdrop */}
+          <div className="absolute w-[280px] sm:w-[350px] h-[350px] bg-emerald-600/20 rounded-full blur-[80px] animate-pulse-glow" />
+          <div className="absolute w-[200px] h-[200px] bg-blue-500/20 rounded-full blur-[60px]" />
 
           <div className="relative float-anim">
             {/* The Canister */}
             <img
               src="/images/can.png"
               alt="Cleanex 25L Canister"
-              className="relative z-20 w-[240px] sm:w-[320px] lg:w-[360px] h-auto object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.15)] filter contrast-110"
+              className="relative z-20 w-[240px] sm:w-[320px] lg:w-[360px] h-auto object-contain drop-shadow-[0_0_50px_rgba(16,185,129,0.35)] filter contrast-125"
             />
-
-            {/* Scanning line */}
+            
+            {/* UI overlay element - scanning line effect */}
             <div className="absolute inset-0 z-30 pointer-events-none rounded-[3rem] overflow-hidden mix-blend-overlay">
-               <div className="w-full h-1 bg-emerald-400/30 blur-[2px] absolute top-0 animate-[scan_4s_ease-in-out_infinite]" />
+               <div className="w-full h-1 bg-emerald-300/50 blur-[2px] absolute top-0 animate-[scan_4s_ease-in-out_infinite]" />
             </div>
 
-            {/* 25L badge */}
-            <div className={`absolute -top-4 ${language === 'ur' ? '-right-6' : '-left-6'} z-40 w-24 h-24 rounded-2xl bg-white border border-emerald-500/40 shadow-[0_4px_20px_rgba(110,167,62,0.15)] flex flex-col items-center justify-center rotate-[-6deg]`}>
-              <div className="absolute inset-0 bg-emerald-50 rounded-2xl" />
-              <span className="text-[9px] text-emerald-600 font-black tracking-[0.2em] uppercase leading-none mb-1 relative z-10">{t('hero.vol')}</span>
-              <span className="text-3xl font-black text-slate-900 leading-none relative z-10">{language === 'ur' ? '۲۵' : '25'}<span className="text-emerald-500">{language === 'ur' ? 'لیٹر' : 'L'}</span></span>
+            {/* High-tech green badge */}
+            <div className={`absolute -top-4 ${language === 'ur' ? '-right-6' : '-left-6'} z-40 w-24 h-24 rounded-2xl bg-[#020D1A] border border-emerald-500/50 shadow-[0_0_30px_rgba(110,167,62,0.25)] flex flex-col items-center justify-center rotate-[-6deg] backdrop-blur-md`}>
+              <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl" />
+              <span className="text-[9px] text-emerald-400 font-black tracking-[0.2em] uppercase leading-none mb-1">{t('hero.vol')}</span>
+              <span className="text-3xl font-black text-white leading-none">{language === 'ur' ? '۲۵' : '25'}<span className="text-emerald-500">{language === 'ur' ? 'لیٹر' : 'L'}</span></span>
             </div>
-
-            {/* Brand pill */}
-            <div className={`absolute -bottom-2 ${language === 'ur' ? '-left-2' : '-right-2'} z-40 bg-white border border-slate-200 shadow-sm px-4 py-2 rounded-lg flex items-center gap-2`}>
-              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
-              <span className="text-[10px] font-black text-slate-700 tracking-widest uppercase">{t('hero.brand')}</span>
+            
+            {/* Holographic brand pill */}
+            <div className={`absolute -bottom-2 ${language === 'ur' ? '-left-2' : '-right-2'} z-40 glass-panel border-cyan-500/30 px-4 py-2 rounded-lg flex items-center gap-2`}>
+              <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              <span className="text-[10px] font-black text-cyan-50 tracking-widest uppercase">{t('hero.brand')}</span>
             </div>
           </div>
         </motion.div>
 
       </div>
-
+      
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes scan {
           0%, 100% { top: 5%; opacity: 0; }
