@@ -4,9 +4,24 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Loader2, CheckCircle2, MessageSquare, PhoneCall, ArrowRight, User, MapPin, Building2, Send } from 'lucide-react';
+import { Loader2, CheckCircle2, PhoneCall, ArrowRight, User, MapPin, Building2, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+
+function WhatsAppIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C8.82 3 3 8.82 3 16c0 2.42.65 4.69 1.79 6.64L3 29l6.54-1.71A13 13 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"
+        fill="currentColor"
+      />
+      <path
+        d="M22.11 19.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"
+        fill="white"
+      />
+    </svg>
+  );
+}
 
 export default function LeadForm({ prefilledMessage }) {
   const { t, language } = useLanguage();
@@ -81,13 +96,13 @@ export default function LeadForm({ prefilledMessage }) {
           </p>
 
           <div className="space-y-6 flex flex-col items-start lg:items-stretch">
-            <div className="flex items-center gap-4 p-4 glass-panel rounded-2xl w-fit border border-emerald-500/20">
-              <div className="p-3 bg-emerald-500/20 rounded-xl">
-                <MessageSquare className="w-6 h-6 text-emerald-400" />
+            <div className="flex items-center gap-4 p-4 glass-panel rounded-2xl w-fit border border-[#25D366]/20">
+              <div className="p-3 bg-[#25D366]/20 rounded-xl">
+                <WhatsAppIcon className="w-6 h-6 text-[#25D366]" />
               </div>
               <div className={language === 'ur' ? 'text-right' : 'text-left'}>
-                <p className="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">{t('leadForm.waPriority')}</p>
-                <a href="https://wa.me/923214858418" target="_blank" rel="noreferrer" className="text-xl font-bold text-white hover:text-emerald-300 transition-colors">
+                <p className="text-xs font-bold text-[#25D366] uppercase tracking-widest mb-1">{t('leadForm.waPriority')}</p>
+                <a href="https://wa.me/923214858418" target="_blank" rel="noreferrer" className="text-xl font-bold text-white hover:text-[#25D366] transition-colors">
                   +92 321 4858418
                 </a>
               </div>

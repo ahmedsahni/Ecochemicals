@@ -2,8 +2,24 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Phone, MessageSquare, MapPin, Building2, Clock, Globe } from 'lucide-react';
+import { Phone, MapPin, Building2, Clock, Globe } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+
+// Real WhatsApp SVG logo
+function WhatsAppIcon({ className }) {
+  return (
+    <svg className={className} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16 3C8.82 3 3 8.82 3 16c0 2.42.65 4.69 1.79 6.64L3 29l6.54-1.71A13 13 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3z"
+        fill="currentColor"
+      />
+      <path
+        d="M22.11 19.46c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.49-.9-.8-1.5-1.78-1.67-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"
+        fill="white"
+      />
+    </svg>
+  );
+}
 
 export default function Contact() {
   const { t, language } = useLanguage();
@@ -46,6 +62,7 @@ export default function Contact() {
             className="lg:col-span-5 glass-panel rounded-3xl p-8 flex flex-col justify-between border border-blue-500/20"
           >
             <div className="space-y-7">
+              {/* Head Office — name + address only, no duplicate delivery text */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-700/20 text-blue-400 flex items-center justify-center flex-shrink-0">
                   <Building2 className="w-5 h-5" />
@@ -53,22 +70,26 @@ export default function Contact() {
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.hqLabel')}</p>
                   <p className="text-lg font-extrabold text-white">ECO Chemicals</p>
-                  <p className="text-sm font-semibold text-slate-400 mt-0.5">{t('contact.regionVal')}</p>
+                  <p className="text-sm font-semibold text-slate-400 mt-0.5">
+                    {language === 'ur' ? 'مینگورہ، سوات' : 'Mingora, Swat'}
+                  </p>
                 </div>
               </div>
 
+              {/* Delivery */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-700/20 text-blue-400 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.regionLabel')}</p>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">{t('contact.logisticsLabel')}</p>
                   <p className="text-sm font-semibold text-slate-300">
-                    {t('contact.regionVal')}
+                    {t('contact.logisticsVal')}
                   </p>
                 </div>
               </div>
 
+              {/* Hours */}
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-700/20 text-blue-400 flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5" />
@@ -78,15 +99,6 @@ export default function Contact() {
                   <p className="text-sm font-semibold text-slate-300">{t('contact.hoursVal')}</p>
                 </div>
               </div>
-            </div>
-
-            <div className="mt-8 border-t border-slate-800 pt-6">
-              <div className="flex items-center gap-2 text-blue-400 text-xs font-bold uppercase tracking-widest mb-2">
-                <Globe className="w-4 h-4" /> {t('contact.logisticsLabel')}
-              </div>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                {t('contact.logisticsVal')}
-              </p>
             </div>
           </motion.div>
 
@@ -134,12 +146,12 @@ export default function Contact() {
               </a>
             </div>
 
-            {/* WhatsApp */}
+            {/* WhatsApp — real logo */}
             <div className="sm:col-span-2 glass-panel border-emerald-500/30 rounded-3xl p-6 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden group">
               <div className="absolute inset-0 bg-emerald-500/5" />
               <div className="relative z-10 flex items-center gap-4 text-center sm:text-left flex-col sm:flex-row">
-                <div className="p-4 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex-shrink-0 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                  <MessageSquare className="w-8 h-8 fill-current" />
+                <div className="p-4 rounded-2xl bg-[#25D366]/20 border border-[#25D366]/30 flex-shrink-0 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
+                  <WhatsAppIcon className="w-8 h-8 text-[#25D366]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-extrabold text-white">{t('contact.chatTitle')}</h3>
@@ -150,8 +162,9 @@ export default function Contact() {
                 href="https://wa.me/923214858418"
                 target="_blank"
                 rel="noreferrer"
-                className="relative z-10 flex-shrink-0 px-7 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-2xl shadow-[0_0_30px_rgba(16,185,129,0.4)] transition-all w-full sm:w-auto text-center"
+                className="relative z-10 flex-shrink-0 flex items-center gap-2 px-7 py-3.5 bg-[#25D366] hover:bg-[#20c55e] text-white font-bold rounded-2xl shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all w-full sm:w-auto justify-center"
               >
+                <WhatsAppIcon className="w-5 h-5 text-white" />
                 {t('contact.openWa')}
               </a>
             </div>
