@@ -79,9 +79,9 @@ export default function HowItWorks() {
                   viewport={{ once: true, margin: "-50px" }}
                   whileHover={{ scale: 1.05, y: -10 }}
                   transition={{ type: "spring", stiffness: 300, damping: 20, delay: i * 0.15 }}
-                  className="relative group"
+                  className="relative group h-full"
                 >
-                  <div className="glass-panel p-8 rounded-3xl relative z-10 border border-slate-700/50 hover:border-blue-500/50 transition-colors">
+                  <div className="glass-panel p-8 rounded-3xl relative z-10 border border-slate-700/50 hover:border-blue-500/50 transition-colors h-full">
                     {/* Node marker */}
                     <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-[#0B0F19] border-4 border-slate-800 group-hover:border-blue-500 flex items-center justify-center transition-colors z-20">
                       <span className="text-sm font-black text-white">{step.number}</span>
