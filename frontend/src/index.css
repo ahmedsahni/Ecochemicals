@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #F0F7FF;
+  }
+  
+  .dark ::-webkit-scrollbar-track {
+    background: #070F1E;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #0066CC;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0052A3;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb {
+    background: #1E2D4A;
+  }
+  
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #FF4444;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    @apply bg-white/70 dark:bg-darkBg/75 backdrop-blur-md border-b border-white/20 dark:border-darkBorder/30;
+  }
+
+  .glass-card {
+    @apply bg-white/80 dark:bg-darkCard/80 backdrop-blur-sm border border-blue-100/50 dark:border-darkBorder/40 shadow-xl shadow-blue-900/5 dark:shadow-black/20;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-full font-semibold text-white bg-primary hover:bg-primary-dark transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-primary/20 hover:shadow-primary/35 flex items-center justify-center gap-2;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 rounded-full font-semibold text-white bg-accent hover:bg-accent-dark transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-accent/20 hover:shadow-accent/35 flex items-center justify-center gap-2;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 rounded-full font-semibold text-primary dark:text-[#E2E8F0] border-2 border-primary/20 dark:border-darkBorder/60 hover:border-primary dark:hover:border-primary transition-all duration-300 flex items-center justify-center gap-2;
+  }
+}
+
+/* Custom CSS Wave Background animations for Hero */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+/* CSS wave keyframes and backgrounds */
+.animated-waves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: repeat-x;
+}
+
+/* Custom background animations for a dynamic feel */
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,102,204,0.15) 0%, rgba(255,255,255,0) 70%);
+  pointer-events: none;
+}
+.dark .hero-particle {
+  background: radial-gradient(circle, rgba(255,68,68,0.08) 0%, rgba(255,255,255,0) 70%);
+}
